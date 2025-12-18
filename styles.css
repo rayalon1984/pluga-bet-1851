@@ -634,6 +634,46 @@ body {
 }
 
 /* ============================================
+   Share Section
+   ============================================ */
+.share-section {
+    padding: 40px 20px;
+    background: var(--sand-light);
+    text-align: center;
+}
+
+.share-text {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.share-btn:hover {
+    background: #1da851;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.share-btn svg {
+    flex-shrink: 0;
+}
+
+/* ============================================
    Footer
    ============================================ */
 .footer {
