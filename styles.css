@@ -199,21 +199,29 @@ body {
 }
 
 .hero-logo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 50%;
-    border: 3px solid rgba(255,255,255,0.8);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
-    background: #f5f5f5;
+    width: 90px !important;
+    height: 90px !important;
+    max-width: 90px !important;
+    max-height: 90px !important;
+    min-width: 90px;
+    min-height: 90px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.8);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    margin-bottom: 16px;
+    background: white;
+    display: block;
 }
 
 @media (max-width: 480px) {
     .hero-logo {
-        width: 100px;
-        height: 100px;
+        width: 70px !important;
+        height: 70px !important;
+        max-width: 70px !important;
+        max-height: 70px !important;
+        min-width: 70px;
+        min-height: 70px;
     }
 }
 
@@ -539,11 +547,13 @@ body {
 .bank-details-content {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 30px;
+    padding: 24px 20px 30px;
     box-shadow: var(--shadow-md);
-    max-width: 400px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
-    border: 3px solid var(--bank-color);
+    border: 2px solid var(--bank-color);
+    box-sizing: border-box;
 }
 
 .bank-details h4 {
@@ -564,13 +574,15 @@ body {
 
 .bank-row {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 14px 12px;
+    text-align: center;
+    padding: 12px 10px;
     border-bottom: 1px solid #eee;
     border-radius: 8px;
     margin-bottom: 4px;
     transition: var(--transition);
+    gap: 4px;
 }
 
 .bank-row.copyable {
@@ -599,8 +611,7 @@ body {
     font-weight: 700;
     color: var(--text-dark);
     font-family: monospace;
-    font-size: 1.05rem;
-    flex-grow: 1;
+    font-size: 1.1rem;
     text-align: center;
 }
 
