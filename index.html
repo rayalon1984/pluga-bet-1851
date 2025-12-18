@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>פלוגה ב׳ - יחד ננצח | Company B - Together We Win</title>
+    <title>פלוגה ב׳ - יחד ננצח | Company B - Together We Stand</title>
     <meta name="description" content="עזרו לנו לצייד את לוחמי פלוגה ב׳ - כל תרומה עושה את ההבדל">
 
     <!-- Fonts -->
@@ -29,7 +29,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="badge" data-he="פלוגה ב׳ • מגיני העמק" data-en="Company B • Valley Defenders">פלוגה ב׳ • מגיני העמק</div>
-            <h1 data-he="יחד ננצח" data-en="Together We Win">יחד ננצח</h1>
+            <h1 data-he="יחד ננצח" data-en="Together We Stand">יחד ננצח</h1>
             <p class="hero-subtitle" data-he="עזרו לנו לצייד את הלוחמים שלנו מעבר למה שצה״ל מספק" data-en="Help us equip our soldiers beyond what the IDF provides">עזרו לנו לצייד את הלוחמים שלנו מעבר למה שצה״ל מספק</p>
             <a href="#donate" class="cta-button">
                 <span data-he="אני רוצה לתרום" data-en="I Want to Donate">אני רוצה לתרום</span>
@@ -228,7 +228,7 @@
     <footer class="footer">
         <div class="container">
             <p>🇮🇱 <span data-he="עם ישראל חי" data-en="Am Yisrael Chai">עם ישראל חי</span> 🇮🇱</p>
-            <p class="footer-credit" data-he="פלוגה ב׳ • מגיני העמק • 2024" data-en="Company B • Valley Defenders • 2024">פלוגה ב׳ • מגיני העמק • 2024</p>
+            <p class="footer-credit"><span data-he="פלוגה ב׳ • מגיני העמק" data-en="Company B • Valley Defenders">פלוגה ב׳ • מגיני העמק</span> • <span id="current-year"></span></p>
         </div>
     </footer>
 
@@ -390,6 +390,9 @@
 
         // Initialize language on load
         initLanguage();
+
+        // Set current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
