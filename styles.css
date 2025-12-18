@@ -570,16 +570,17 @@ body {
 }
 
 .bank-details.show {
-    max-height: 800px;
+    max-height: 1200px;
     opacity: 1;
     margin-top: 30px;
     margin-bottom: 20px;
+    overflow: visible;
 }
 
 .bank-details-content {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 24px 20px 30px;
+    padding: 24px 20px 80px;
     box-shadow: var(--shadow-md);
     max-width: 100%;
     width: 100%;
