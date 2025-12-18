@@ -108,6 +108,39 @@ body {
 }
 
 /* ============================================
+   WhatsApp Float Button
+   ============================================ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.whatsapp-float svg {
+    width: 56px;
+    height: 56px;
+    filter: drop-shadow(0 4px 12px rgba(37, 211, 102, 0.4));
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover svg {
+    transform: scale(1.15);
+    filter: drop-shadow(0 6px 20px rgba(37, 211, 102, 0.5));
+}
+
+[dir="ltr"] .whatsapp-float {
+    right: 24px;
+    left: auto;
+}
+
+/* ============================================
    Hero Section
    ============================================ */
 .hero {
