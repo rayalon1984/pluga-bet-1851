@@ -55,6 +55,59 @@ body {
 }
 
 /* ============================================
+   Language Toggle
+   ============================================ */
+.lang-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--olive-light);
+    border-radius: 50px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    font-family: inherit;
+}
+
+.lang-toggle:hover {
+    background: var(--white);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.lang-flag {
+    font-size: 1.2rem;
+}
+
+.lang-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--olive-dark);
+    letter-spacing: 0.5px;
+}
+
+/* RTL/LTR adjustments */
+[dir="ltr"] .lang-toggle {
+    left: auto;
+    right: 20px;
+}
+
+[dir="ltr"] .equipment-item:hover {
+    transform: translateX(4px);
+}
+
+[dir="ltr"] .donate-cta {
+    direction: ltr;
+}
+
+/* ============================================
    Hero Section
    ============================================ */
 .hero {
