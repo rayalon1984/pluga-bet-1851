@@ -22,7 +22,7 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="badge">פלוגה ב׳ • חיל רגלים</div>
+            <div class="badge">פלוגה ב׳ • מגיני העמק</div>
             <h1>יחד ננצח</h1>
             <p class="hero-subtitle">עזרו לנו לצייד את הלוחמים שלנו מעבר למה שצה״ל מספק</p>
             <a href="#donate" class="cta-button">
@@ -105,26 +105,31 @@
             <div id="bank-details" class="bank-details">
                 <div class="bank-details-content">
                     <h4>פרטי חשבון להעברה:</h4>
+                    <p class="bank-hint">לחצו על כל שורה להעתקה מהירה</p>
                     <div class="bank-info">
-                        <div class="bank-row">
+                        <div class="bank-row copyable" onclick="copyValue(this, 'בנק')">
                             <span class="label">בנק:</span>
                             <span class="value" id="bank-name">[שם הבנק]</span>
+                            <span class="copy-icon">📋</span>
                         </div>
-                        <div class="bank-row">
+                        <div class="bank-row copyable" onclick="copyValue(this, 'סניף')">
                             <span class="label">סניף:</span>
                             <span class="value" id="bank-branch">[מספר סניף]</span>
+                            <span class="copy-icon">📋</span>
                         </div>
-                        <div class="bank-row">
+                        <div class="bank-row copyable" onclick="copyValue(this, 'חשבון')">
                             <span class="label">חשבון:</span>
                             <span class="value" id="bank-account">[מספר חשבון]</span>
+                            <span class="copy-icon">📋</span>
                         </div>
-                        <div class="bank-row">
+                        <div class="bank-row copyable" onclick="copyValue(this, 'על שם')">
                             <span class="label">על שם:</span>
                             <span class="value" id="bank-holder">[שם בעל החשבון]</span>
+                            <span class="copy-icon">📋</span>
                         </div>
                     </div>
                     <button class="copy-btn" onclick="copyBankDetails()">
-                        📋 העתק פרטים
+                        📋 העתק הכל
                     </button>
                 </div>
             </div>
@@ -135,7 +140,7 @@
     <section class="message-section">
         <div class="container">
             <blockquote>
-                "הם שם בשבילנו — אנחנו פה בשבילם"
+                "אתם שם בשבילנו — אנחנו פה בשבילכם"
             </blockquote>
         </div>
     </section>
@@ -144,7 +149,7 @@
     <footer class="footer">
         <div class="container">
             <p>🇮🇱 עם ישראל חי 🇮🇱</p>
-            <p class="footer-credit">פלוגה ב׳ • חיל רגלים • 2024</p>
+            <p class="footer-credit">פלוגה ב׳ • מגיני העמק • 2024</p>
         </div>
     </footer>
 
@@ -159,7 +164,21 @@
             }
         }
 
-        // Copy bank details to clipboard
+        // Copy single value
+        function copyValue(row, label) {
+            const value = row.querySelector('.value').textContent;
+            navigator.clipboard.writeText(value).then(() => {
+                const icon = row.querySelector('.copy-icon');
+                icon.textContent = '✓';
+                row.classList.add('copied');
+                setTimeout(() => {
+                    icon.textContent = '📋';
+                    row.classList.remove('copied');
+                }, 1500);
+            });
+        }
+
+        // Copy all bank details to clipboard
         function copyBankDetails() {
             const bankName = document.getElementById('bank-name').textContent;
             const branch = document.getElementById('bank-branch').textContent;
@@ -172,7 +191,7 @@
                 const btn = document.querySelector('.copy-btn');
                 btn.textContent = '✓ הועתק!';
                 setTimeout(() => {
-                    btn.textContent = '📋 העתק פרטים';
+                    btn.textContent = '📋 העתק הכל';
                 }, 2000);
             });
         }

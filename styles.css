@@ -63,7 +63,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--olive-dark) 0%, var(--olive) 50%, var(--olive-light) 100%);
+    background: url('ae00d74b-f38a-428d-980e-6839eaf25b83.jpeg') center center / cover no-repeat;
     text-align: center;
     padding: 40px 20px;
     overflow: hidden;
@@ -76,8 +76,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
+    background: linear-gradient(
+        180deg,
+        rgba(45, 58, 46, 0.7) 0%,
+        rgba(45, 58, 46, 0.5) 30%,
+        rgba(45, 58, 46, 0.6) 70%,
+        rgba(45, 58, 46, 0.85) 100%
+    );
+    z-index: 0;
 }
 
 .hero-overlay {
@@ -86,7 +92,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 0;
 }
 
 .hero-content {
@@ -372,7 +379,13 @@ body {
 .bank-details h4 {
     font-size: 1.2rem;
     color: var(--bank-color);
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+}
+
+.bank-hint {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 16px;
 }
 
 .bank-info {
@@ -382,8 +395,24 @@ body {
 .bank-row {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
+    align-items: center;
+    padding: 14px 12px;
     border-bottom: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: var(--transition);
+}
+
+.bank-row.copyable {
+    cursor: pointer;
+}
+
+.bank-row.copyable:hover {
+    background: #f0f7ff;
+}
+
+.bank-row.copied {
+    background: #e8f5e9;
 }
 
 .bank-row:last-child {
@@ -393,6 +422,7 @@ body {
 .bank-row .label {
     font-weight: 600;
     color: var(--text-light);
+    flex-shrink: 0;
 }
 
 .bank-row .value {
@@ -400,6 +430,19 @@ body {
     color: var(--text-dark);
     font-family: monospace;
     font-size: 1.05rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.bank-row .copy-icon {
+    font-size: 0.9rem;
+    opacity: 0.5;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.bank-row:hover .copy-icon {
+    opacity: 1;
 }
 
 .copy-btn {
