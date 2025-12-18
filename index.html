@@ -37,23 +37,98 @@
     <!-- Why Section -->
     <section class="why-section">
         <div class="container">
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">🎒</div>
-                    <h3>ציוד מבצעי</h3>
-                    <p>ציוד טקטי איכותי שמשפר את היכולת המבצעית</p>
+            <h2 class="section-title">מה התרומה שלכם קונה?</h2>
+            <p class="section-subtitle">כל שקל הופך לציוד אמיתי ללוחמים</p>
+
+            <div class="equipment-grid">
+                <!-- ציוד מבצעי -->
+                <div class="equipment-category">
+                    <div class="category-header">
+                        <span class="category-icon">🎯</span>
+                        <h3>ציוד מבצעי</h3>
+                    </div>
+                    <div class="equipment-list">
+                        <div class="equipment-item">
+                            <span class="item-name">כוונת השלכה</span>
+                            <span class="item-price">₪2,900</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">מכפיל לקלע</span>
+                            <span class="item-price">₪1,800</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">משקפת מפקד</span>
+                            <span class="item-price">₪3,500</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">סמן לייזר</span>
+                            <span class="item-price">₪4,200</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">פאק נשק מפקד</span>
+                            <span class="item-price">₪850</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">🛡️</div>
-                    <h3>הגנה משופרת</h3>
-                    <p>אביזרי מיגון והגנה מתקדמים ללוחמים</p>
+
+                <!-- הגנה משופרת -->
+                <div class="equipment-category">
+                    <div class="category-header">
+                        <span class="category-icon">🛡️</span>
+                        <h3>הגנה משופרת</h3>
+                    </div>
+                    <div class="equipment-list">
+                        <div class="equipment-item">
+                            <span class="item-name">משקפי מגן יום/לילה</span>
+                            <span class="item-price">₪650</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">ברכיות טקטיות</span>
+                            <span class="item-price">₪180</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">נעליים טקטיות</span>
+                            <span class="item-price">₪750</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">מדים טקטיים</span>
+                            <span class="item-price">₪450</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">ערכת אמר״ל</span>
+                            <span class="item-price">₪320</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">💪</div>
-                    <h3>חיזוק המורל</h3>
-                    <p>כי הלוחמים צריכים לדעת שהעורף איתם</p>
+
+                <!-- ציוד אישי -->
+                <div class="equipment-category">
+                    <div class="category-header">
+                        <span class="category-icon">💪</span>
+                        <h3>ציוד אישי</h3>
+                    </div>
+                    <div class="equipment-list">
+                        <div class="equipment-item">
+                            <span class="item-name">מעיל חורף</span>
+                            <span class="item-price">₪380</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">סווטשירט</span>
+                            <span class="item-price">₪150</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">רצועת נשק</span>
+                            <span class="item-price">₪220</span>
+                        </div>
+                        <div class="equipment-item">
+                            <span class="item-name">חגורת מכנסיים</span>
+                            <span class="item-price">₪120</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <p class="equipment-note">* המחירים משוערים ומשתנים לפי ספק ודגם</p>
         </div>
     </section>
 
@@ -216,7 +291,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.why-card, .donate-card').forEach(el => {
+        document.querySelectorAll('.equipment-category, .donate-card').forEach(el => {
             observer.observe(el);
         });
     </script>

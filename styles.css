@@ -166,57 +166,111 @@ body {
 }
 
 /* ============================================
-   Why Section
+   Why Section - Equipment Grid
    ============================================ */
 .why-section {
     padding: 80px 20px;
     background: var(--white);
 }
 
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.why-card {
-    text-align: center;
-    padding: 40px 30px;
-    background: var(--off-white);
-    border-radius: var(--radius);
-    transition: var(--transition);
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.why-card.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.why-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-}
-
-.why-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.why-card h3 {
-    font-size: 1.3rem;
+.section-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     font-weight: 700;
     color: var(--olive-dark);
+    text-align: center;
     margin-bottom: 12px;
 }
 
-.why-card p {
+.section-subtitle {
+    font-size: 1.1rem;
     color: var(--text-light);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.equipment-category {
+    background: var(--off-white);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: var(--transition);
+}
+
+.equipment-category:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--olive-light);
+}
+
+.category-icon {
+    font-size: 2rem;
+}
+
+.category-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--olive-dark);
+    margin: 0;
+}
+
+.equipment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.equipment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--white);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.equipment-item:hover {
+    background: #f0f7f0;
+    transform: translateX(-4px);
+}
+
+.item-name {
     font-size: 1rem;
-    line-height: 1.5;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.item-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--olive-dark);
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.equipment-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 40px;
+    font-style: italic;
 }
 
 /* ============================================
@@ -529,7 +583,10 @@ body {
         padding: 60px 20px;
     }
 
-    .why-card,
+    .equipment-category {
+        padding: 24px;
+    }
+
     .donate-card {
         padding: 30px 24px;
     }
@@ -561,16 +618,30 @@ body {
         justify-content: center;
     }
 
-    .why-grid {
-        gap: 20px;
+    .equipment-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    .why-card {
-        padding: 24px 20px;
+    .equipment-category {
+        padding: 20px;
     }
 
-    .why-icon {
-        font-size: 2.5rem;
+    .category-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .equipment-item {
+        padding: 10px 12px;
+    }
+
+    .item-name {
+        font-size: 0.9rem;
+    }
+
+    .item-price {
+        font-size: 0.95rem;
+        padding: 5px 10px;
     }
 
     .donate-grid {
@@ -598,9 +669,19 @@ body {
 }
 
 /* Animation timing for cards */
-.why-card:nth-child(1) { transition-delay: 0s; }
-.why-card:nth-child(2) { transition-delay: 0.1s; }
-.why-card:nth-child(3) { transition-delay: 0.2s; }
+.equipment-category {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.equipment-category.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.equipment-category:nth-child(1) { transition-delay: 0s; }
+.equipment-category:nth-child(2) { transition-delay: 0.1s; }
+.equipment-category:nth-child(3) { transition-delay: 0.2s; }
 
 .donate-card:nth-child(1) { transition-delay: 0s; }
 .donate-card:nth-child(2) { transition-delay: 0.1s; }
