@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פלוגה ב׳ - יחד ננצח</title>
+    <meta name="description" content="עזרו לנו לצייד את לוחמי פלוגה ב׳ - כל תרומה עושה את ההבדל">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎖️</text></svg>">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="badge">פלוגה ב׳ • חיל רגלים</div>
+            <h1>יחד ננצח</h1>
+            <p class="hero-subtitle">עזרו לנו לצייד את הלוחמים שלנו מעבר למה שצה״ל מספק</p>
+            <a href="#donate" class="cta-button">
+                <span>אני רוצה לתרום</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🎒</div>
+                    <h3>ציוד מבצעי</h3>
+                    <p>ציוד טקטי איכותי שמשפר את היכולת המבצעית</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <h3>הגנה משופרת</h3>
+                    <p>אביזרי מיגון והגנה מתקדמים ללוחמים</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💪</div>
+                    <h3>חיזוק המורל</h3>
+                    <p>כי הלוחמים צריכים לדעת שהעורף איתם</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="donate-section">
+        <div class="container">
+            <h2>בחרו את דרך התרומה</h2>
+            <p class="donate-subtitle">כל שקל עושה את ההבדל 🇮🇱</p>
+
+            <div class="donate-grid">
+                <!-- PayBox -->
+                <a href="#" class="donate-card paybox" target="_blank" rel="noopener">
+                    <div class="donate-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                        </svg>
+                    </div>
+                    <h3>PayBox</h3>
+                    <p>תשלום מאובטח בקליק</p>
+                    <span class="donate-cta">לתרומה ←</span>
+                </a>
+
+                <!-- Bit -->
+                <a href="#" class="donate-card bit" target="_blank" rel="noopener">
+                    <div class="donate-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                        </svg>
+                    </div>
+                    <h3>Bit</h3>
+                    <p>העברה מהירה מהנייד</p>
+                    <span class="donate-cta">לתרומה ←</span>
+                </a>
+
+                <!-- Bank Transfer -->
+                <div class="donate-card bank" onclick="toggleBankDetails()">
+                    <div class="donate-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 10h3v7H4v-7zm6 0h3v7h-3v-7zM2 22h19v-3H2v3zm14-12h3v7h-3v-7zm-4.5-9L2 6v2h19V6l-9.5-5z"/>
+                        </svg>
+                    </div>
+                    <h3>העברה בנקאית</h3>
+                    <p>לחצו לפרטי החשבון</p>
+                    <span class="donate-cta">הצג פרטים ↓</span>
+                </div>
+            </div>
+
+            <!-- Bank Details (Hidden by default) -->
+            <div id="bank-details" class="bank-details">
+                <div class="bank-details-content">
+                    <h4>פרטי חשבון להעברה:</h4>
+                    <div class="bank-info">
+                        <div class="bank-row">
+                            <span class="label">בנק:</span>
+                            <span class="value" id="bank-name">[שם הבנק]</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="label">סניף:</span>
+                            <span class="value" id="bank-branch">[מספר סניף]</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="label">חשבון:</span>
+                            <span class="value" id="bank-account">[מספר חשבון]</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="label">על שם:</span>
+                            <span class="value" id="bank-holder">[שם בעל החשבון]</span>
+                        </div>
+                    </div>
+                    <button class="copy-btn" onclick="copyBankDetails()">
+                        📋 העתק פרטים
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="message-section">
+        <div class="container">
+            <blockquote>
+                "הם שם בשבילנו — אנחנו פה בשבילם"
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>🇮🇱 עם ישראל חי 🇮🇱</p>
+            <p class="footer-credit">פלוגה ב׳ • חיל רגלים • 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle bank details
+        function toggleBankDetails() {
+            const details = document.getElementById('bank-details');
+            details.classList.toggle('show');
+
+            if (details.classList.contains('show')) {
+                details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Copy bank details to clipboard
+        function copyBankDetails() {
+            const bankName = document.getElementById('bank-name').textContent;
+            const branch = document.getElementById('bank-branch').textContent;
+            const account = document.getElementById('bank-account').textContent;
+            const holder = document.getElementById('bank-holder').textContent;
+
+            const text = `פרטי חשבון לתרומה - פלוגה ב׳\nבנק: ${bankName}\nסניף: ${branch}\nחשבון: ${account}\nעל שם: ${holder}`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✓ הועתק!';
+                setTimeout(() => {
+                    btn.textContent = '📋 העתק פרטים';
+                }, 2000);
+            });
+        }
+
+        // Smooth scroll for CTA
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#donate').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.why-card, .donate-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
