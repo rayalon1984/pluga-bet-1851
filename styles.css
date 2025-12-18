@@ -102,8 +102,8 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 2px solid var(--olive-light);
-    border-radius: 12px;
-    padding: 6px;
+    border-radius: 10px;
+    padding: 5px;
     box-shadow: var(--shadow-md);
     object-fit: contain;
     box-sizing: border-box;
