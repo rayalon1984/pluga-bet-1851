@@ -93,12 +93,12 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Logo Badge - Top Right */
+/* Logo Badge - Inside Hero */
 .logo-badge {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 10;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 2px solid var(--olive-light);
