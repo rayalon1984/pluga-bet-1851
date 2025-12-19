@@ -20,8 +20,8 @@
 <body>
     <!-- Language Toggle -->
     <button class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">
-        <span class="lang-flag">🇮🇱</span>
         <span class="lang-text">EN</span>
+        <span class="lang-flag">🇺🇸</span>
     </button>
 
     <!-- WhatsApp Float Button -->
@@ -285,11 +285,13 @@
             const langText = langToggle.querySelector('.lang-text');
 
             if (lang === 'he') {
-                langFlag.textContent = '🇮🇱';
+                // Currently Hebrew, show option to switch to English
                 langText.textContent = 'EN';
-            } else {
                 langFlag.textContent = '🇺🇸';
-                langText.textContent = 'עב';
+            } else {
+                // Currently English, show option to switch to Hebrew
+                langText.textContent = 'IL';
+                langFlag.textContent = '🇮🇱';
             }
 
             // Update all translatable elements
