@@ -140,6 +140,7 @@ body {
 [dir="ltr"] .gallery-close {
     right: auto;
     left: 20px;
+    flex-direction: row-reverse;
 }
 
 [dir="ltr"] .gallery-nav.prev {
@@ -906,11 +907,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     color: white;
-    opacity: 0.8;
-    animation: pulse 2s infinite;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 16px 28px;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: pulseIndicator 2s ease-in-out infinite;
     pointer-events: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .swipe-indicator.hide {
@@ -919,22 +925,25 @@ body {
 
 .swipe-indicator svg {
     animation: swipeUpDown 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 @keyframes swipeUpDown {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-12px); opacity: 0.7; }
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+@keyframes pulseIndicator {
+    0%, 100% { opacity: 0.9; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
 }
 
 .swipe-indicator p {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    letter-spacing: 0.5px;
+    margin: 0;
 }
 
 /* Navigation Arrows (Desktop) */
@@ -988,24 +997,38 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(201, 39, 39, 0.9);
     backdrop-filter: blur(10px);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     cursor: pointer;
     transition: var(--transition);
     color: white;
     z-index: 20;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    font-family: inherit;
+}
+
+.gallery-close svg {
+    flex-shrink: 0;
+}
+
+.close-text {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 .gallery-close:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
+    background: rgba(255, 50, 50, 1);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(201, 39, 39, 0.6);
 }
 
 /* Counter */
@@ -1254,13 +1277,17 @@ body {
     .gallery-close {
         top: 10px;
         right: 10px;
-        width: 45px;
-        height: 45px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
     }
 
     .gallery-close svg {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .close-text {
+        font-size: 0.85rem;
     }
 
     .gallery-counter {
@@ -1317,14 +1344,64 @@ body {
 .who-section,
 .gallery-section {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .who-section.animate-in,
 .gallery-section.animate-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Staggered animation for who-content children */
+.who-content h3,
+.who-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.who-section.animate-in .who-content h3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.who-section.animate-in .who-content p:nth-of-type(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.who-section.animate-in .who-content p:nth-of-type(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.who-section.animate-in .who-content p:nth-of-type(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.who-section.animate-in .who-mission {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+
+.who-icon {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.who-section.animate-in .who-icon {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.1s;
 }
 
 /* Accessibility */

@@ -302,11 +302,12 @@
 
     <!-- Gallery Modal -->
     <div id="gallery-modal" class="gallery-modal">
-        <button class="gallery-close" onclick="closeGallery()" title="Close (ESC)">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button class="gallery-close" onclick="closeGallery()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="18" y1="6" x2="6" y2="18"/>
                 <line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
+            <span class="close-text" data-he="סגור" data-en="Close">סגור</span>
         </button>
 
         <div class="gallery-content">
@@ -535,18 +536,20 @@ ${siteUrl}`
         // Photo Gallery Functionality
         // ============================================
 
-        // Mock images (10 placeholder images with different colors)
+        // Mock images - replace these with your real photos!
+        // Use local files like: 'photo1.jpg', 'photo2.jpg' etc.
+        // Or upload to your repository and use paths like: 'images/photo1.jpg'
         const galleryImages = [
-            'https://placehold.co/1200x800/2d3a2e/f8f6f1?text=Company+B+-+Photo+1',
-            'https://placehold.co/1200x800/4a5d4c/f8f6f1?text=Company+B+-+Photo+2',
-            'https://placehold.co/1200x800/6b7d6c/f8f6f1?text=Company+B+-+Photo+3',
-            'https://placehold.co/1200x800/c9a227/2d3a2e?text=Company+B+-+Photo+4',
-            'https://placehold.co/1200x800/d4c5a9/2d3a2e?text=Company+B+-+Photo+5',
-            'https://placehold.co/1200x800/2d3a2e/c9a227?text=Company+B+-+Photo+6',
-            'https://placehold.co/1200x800/4a5d4c/e8dcc6?text=Company+B+-+Photo+7',
-            'https://placehold.co/1200x800/3a4d3c/f8f6f1?text=Company+B+-+Photo+8',
-            'https://placehold.co/1200x800/c9a227/f8f6f1?text=Company+B+-+Photo+9',
-            'https://placehold.co/1200x800/2d3a2e/d4c5a9?text=Company+B+-+Photo+10'
+            'https://picsum.photos/1200/800?random=1',  // Mock photo 1
+            'https://picsum.photos/1200/800?random=2',  // Mock photo 2
+            'https://picsum.photos/1200/800?random=3',  // Mock photo 3
+            'https://picsum.photos/1200/800?random=4',  // Mock photo 4
+            'https://picsum.photos/1200/800?random=5',  // Mock photo 5
+            'https://picsum.photos/1200/800?random=6',  // Mock photo 6
+            'https://picsum.photos/1200/800?random=7',  // Mock photo 7
+            'https://picsum.photos/1200/800?random=8',  // Mock photo 8
+            'https://picsum.photos/1200/800?random=9',  // Mock photo 9
+            'https://picsum.photos/1200/800?random=10'  // Mock photo 10
         ];
 
         let currentImageIndex = 0;
