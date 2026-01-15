@@ -137,6 +137,21 @@ body {
     direction: ltr;
 }
 
+[dir="ltr"] .gallery-close {
+    right: auto;
+    left: 20px;
+}
+
+[dir="ltr"] .gallery-nav.prev {
+    left: auto;
+    right: 20px;
+}
+
+[dir="ltr"] .gallery-nav.next {
+    right: auto;
+    left: 20px;
+}
+
 /* ============================================
    WhatsApp Float Button
    ============================================ */
@@ -698,6 +713,318 @@ body {
 }
 
 /* ============================================
+   Who We Are Section
+   ============================================ */
+.who-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--olive-dark) 0%, #3a4d3c 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.who-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at top, rgba(255,255,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.who-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.who-section .section-title {
+    color: var(--gold);
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.who-content {
+    max-width: 750px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.who-content h3 {
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    color: var(--sand-light);
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.who-content p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.who-mission {
+    font-size: clamp(1.1rem, 3.5vw, 1.35rem) !important;
+    font-weight: 700 !important;
+    color: var(--gold-light) !important;
+    margin-top: 30px !important;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    border: 2px solid rgba(201,162,39,0.3);
+}
+
+/* ============================================
+   Photo Gallery Section
+   ============================================ */
+.gallery-section {
+    padding: 60px 20px;
+    background: var(--white);
+    text-align: center;
+}
+
+.gallery-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--olive-dark) 0%, var(--olive) 100%);
+    color: white;
+    padding: 18px 36px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    font-family: inherit;
+}
+
+.gallery-open-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-open-btn svg {
+    flex-shrink: 0;
+}
+
+/* Gallery Modal */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.gallery-content {
+    position: relative;
+    width: 90%;
+    height: 90vh;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: pan-y;
+}
+
+.gallery-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.gallery-image.sliding-up {
+    animation: slideUp 0.3s ease forwards;
+}
+
+.gallery-image.sliding-down {
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100%); opacity: 0; }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
+}
+
+.gallery-image.slide-in-up {
+    animation: slideInUp 0.3s ease forwards;
+}
+
+.gallery-image.slide-in-down {
+    animation: slideInDown 0.3s ease forwards;
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInDown {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Swipe Indicator */
+.swipe-indicator {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    opacity: 0.8;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+}
+
+.swipe-indicator.hide {
+    display: none;
+}
+
+.swipe-indicator svg {
+    animation: swipeUpDown 1.5s ease-in-out infinite;
+}
+
+@keyframes swipeUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.swipe-indicator p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* Navigation Arrows (Desktop) */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: white;
+    z-index: 10;
+}
+
+.gallery-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: 20px;
+}
+
+.gallery-nav.next {
+    right: 20px;
+}
+
+/* Hide arrows on mobile, show on hover on desktop */
+@media (max-width: 768px) {
+    .gallery-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .swipe-indicator {
+        display: none;
+    }
+}
+
+/* Close Button */
+.gallery-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: white;
+    z-index: 20;
+}
+
+.gallery-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Counter */
+.gallery-counter {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* ============================================
    Share Section
    ============================================ */
 .share-section {
@@ -793,8 +1120,33 @@ body {
         padding: 30px 24px;
     }
 
-    .message-section {
+    .message-section,
+    .who-section {
         padding: 60px 20px;
+    }
+
+    .gallery-section {
+        padding: 50px 20px;
+    }
+
+    .gallery-open-btn {
+        padding: 16px 32px;
+        font-size: 1.1rem;
+    }
+
+    .gallery-content {
+        width: 95%;
+        height: 85vh;
+    }
+
+    .gallery-counter {
+        bottom: 20px;
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .swipe-indicator {
+        bottom: 80px;
     }
 }
 
@@ -859,6 +1211,77 @@ body {
         height: 70px;
     }
 
+    .who-section {
+        padding: 50px 20px;
+    }
+
+    .who-icon {
+        font-size: 3rem;
+    }
+
+    .who-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .who-content p {
+        font-size: 1rem;
+        margin-bottom: 16px;
+    }
+
+    .who-mission {
+        font-size: 1.1rem !important;
+        padding: 16px !important;
+        margin-top: 24px !important;
+    }
+
+    .gallery-section {
+        padding: 40px 20px;
+    }
+
+    .gallery-open-btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .gallery-content {
+        width: 100%;
+        height: 80vh;
+    }
+
+    .gallery-close {
+        top: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .gallery-close svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .gallery-counter {
+        bottom: 15px;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .swipe-indicator {
+        bottom: 70px;
+    }
+
+    .swipe-indicator svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .swipe-indicator p {
+        font-size: 0.85rem;
+    }
+
     .bank-details-content {
         padding: 24px 20px;
     }
@@ -889,6 +1312,20 @@ body {
 .donate-card:nth-child(1) { transition-delay: 0s; }
 .donate-card:nth-child(2) { transition-delay: 0.1s; }
 .donate-card:nth-child(3) { transition-delay: 0.2s; }
+
+/* Who section and Gallery animations */
+.who-section,
+.gallery-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.who-section.animate-in,
+.gallery-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
