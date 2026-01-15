@@ -48,6 +48,43 @@
         </div>
     </section>
 
+    <!-- Who We Are Section -->
+    <section class="who-section">
+        <div class="container">
+            <div class="who-icon">🛡️</div>
+            <h2 class="section-title" data-he="מי אנחנו" data-en="Who We Are">מי אנחנו</h2>
+
+            <div class="who-content">
+                <h3 data-he="פלוגה ב׳ – מגיני העמק הוקמה בעקבות מסקנות השבעה באוקטובר." data-en="Company B – Guardians of the Valley was established following the lessons of October 7th.">פלוגה ב׳ – מגיני העמק הוקמה בעקבות מסקנות השבעה באוקטובר.</h3>
+
+                <p data-he="כוח חי״ר ייעודי, המבוסס על תושבי הגליל, הזמינים בכל רגע ללחימה ולהגנה על הבית." data-en="We are an infantry force composed of Galilee residents, ready at any moment to defend and fight for our home.">כוח חי״ר ייעודי, המבוסס על תושבי הגליל, הזמינים בכל רגע ללחימה ולהגנה על הבית.</p>
+
+                <p data-he="אנחנו חיים כאן, סמוך לגבול - מגדלים כאן את ילדינו, את החקלאות שלנו ואת ההתיישבות מאז קום המדינה." data-en="We live here, near the border. We raise our families here, cultivate our land, and uphold the Zionist settlement of the Galilee since the founding of the State of Israel.">אנחנו חיים כאן, סמוך לגבול - מגדלים כאן את ילדינו, את החקלאות שלנו ואת ההתיישבות מאז קום המדינה.</p>
+
+                <p data-he="אנחנו לא מגיעים מהמרכז - אנחנו הקו הקדמי." data-en="We are not a distant force - we are the front line.">אנחנו לא מגיעים מהמרכז - אנחנו הקו הקדמי.</p>
+
+                <p class="who-mission" data-he="השליחות שלנו ברורה: להגן על העמק, על הגליל ועל מדינת ישראל." data-en="Our mission is clear: to protect the Valley, the Galilee, and the State of Israel.">השליחות שלנו ברורה: להגן על העמק, על הגליל ועל מדינת ישראל.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title" data-he="הפלוגה בפעולה" data-en="Our Company in Action">הפלוגה בפעולה</h2>
+            <p class="section-subtitle" data-he="הכירו אותנו דרך התמונות שלנו" data-en="Get to know us through our photos">הכירו אותנו דרך התמונות שלנו</p>
+
+            <button class="gallery-open-btn" onclick="openGallery()">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <span data-he="פתח גלריה" data-en="Open Gallery">פתח גלריה</span>
+            </button>
+        </div>
+    </section>
+
     <!-- Why Section -->
     <section class="why-section">
         <div class="container">
@@ -263,6 +300,46 @@
         </div>
     </footer>
 
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal">
+        <button class="gallery-close" onclick="closeGallery()" title="Close (ESC)">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+
+        <div class="gallery-content">
+            <img id="gallery-image" src="" alt="Gallery Image" class="gallery-image">
+
+            <!-- Swipe Indicator (shows on first image) -->
+            <div class="swipe-indicator">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+                    <path d="M7.41 20.41L12 15.83l4.59 4.58L18 19l-6-6-6 6z" opacity="0.5"/>
+                </svg>
+                <p data-he="החלק למעלה/למטה" data-en="Swipe up/down">החלק למעלה/למטה</p>
+            </div>
+
+            <!-- Navigation Arrows (Desktop) -->
+            <button class="gallery-nav prev" onclick="prevImage()" title="Previous (Left Arrow)">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+            <button class="gallery-nav next" onclick="nextImage()" title="Next (Right Arrow)">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </button>
+
+            <!-- Counter -->
+            <div class="gallery-counter">
+                <span id="gallery-current">1</span> / <span id="gallery-total">10</span>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Current language state
         let currentLang = 'he';
@@ -417,7 +494,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.equipment-category, .donate-card').forEach(el => {
+        document.querySelectorAll('.equipment-category, .donate-card, .who-section, .gallery-section').forEach(el => {
             observer.observe(el);
         });
 
@@ -452,6 +529,165 @@ ${siteUrl}`
             e.preventDefault();
             const message = encodeURIComponent(shareMessages[currentLang]);
             window.open('https://wa.me/?text=' + message, '_blank');
+        });
+
+        // ============================================
+        // Photo Gallery Functionality
+        // ============================================
+
+        // Mock images (10 placeholder images with different colors)
+        const galleryImages = [
+            'https://placehold.co/1200x800/2d3a2e/f8f6f1?text=Company+B+-+Photo+1',
+            'https://placehold.co/1200x800/4a5d4c/f8f6f1?text=Company+B+-+Photo+2',
+            'https://placehold.co/1200x800/6b7d6c/f8f6f1?text=Company+B+-+Photo+3',
+            'https://placehold.co/1200x800/c9a227/2d3a2e?text=Company+B+-+Photo+4',
+            'https://placehold.co/1200x800/d4c5a9/2d3a2e?text=Company+B+-+Photo+5',
+            'https://placehold.co/1200x800/2d3a2e/c9a227?text=Company+B+-+Photo+6',
+            'https://placehold.co/1200x800/4a5d4c/e8dcc6?text=Company+B+-+Photo+7',
+            'https://placehold.co/1200x800/3a4d3c/f8f6f1?text=Company+B+-+Photo+8',
+            'https://placehold.co/1200x800/c9a227/f8f6f1?text=Company+B+-+Photo+9',
+            'https://placehold.co/1200x800/2d3a2e/d4c5a9?text=Company+B+-+Photo+10'
+        ];
+
+        let currentImageIndex = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+        let hasInteracted = false;
+
+        // Open gallery
+        function openGallery() {
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.add('active');
+            currentImageIndex = 0;
+            updateGalleryImage();
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+
+        // Close gallery
+        function closeGallery() {
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scroll
+            hasInteracted = false;
+        }
+
+        // Update gallery image
+        function updateGalleryImage() {
+            const image = document.getElementById('gallery-image');
+            const currentSpan = document.getElementById('gallery-current');
+            const totalSpan = document.getElementById('gallery-total');
+            const swipeIndicator = document.querySelector('.swipe-indicator');
+
+            // Update image
+            image.src = galleryImages[currentImageIndex];
+
+            // Update counter
+            currentSpan.textContent = currentImageIndex + 1;
+            totalSpan.textContent = galleryImages.length;
+
+            // Hide swipe indicator after first interaction
+            if (hasInteracted && swipeIndicator) {
+                swipeIndicator.classList.add('hide');
+            }
+        }
+
+        // Next image (swipe up or right arrow)
+        function nextImage() {
+            const image = document.getElementById('gallery-image');
+
+            if (currentImageIndex < galleryImages.length - 1) {
+                // Add slide-up animation
+                image.classList.add('sliding-up');
+
+                setTimeout(() => {
+                    currentImageIndex++;
+                    image.classList.remove('sliding-up');
+                    image.classList.add('slide-in-up');
+                    updateGalleryImage();
+
+                    setTimeout(() => {
+                        image.classList.remove('slide-in-up');
+                    }, 300);
+                }, 300);
+
+                hasInteracted = true;
+            }
+        }
+
+        // Previous image (swipe down or left arrow)
+        function prevImage() {
+            const image = document.getElementById('gallery-image');
+
+            if (currentImageIndex > 0) {
+                // Add slide-down animation
+                image.classList.add('sliding-down');
+
+                setTimeout(() => {
+                    currentImageIndex--;
+                    image.classList.remove('sliding-down');
+                    image.classList.add('slide-in-down');
+                    updateGalleryImage();
+
+                    setTimeout(() => {
+                        image.classList.remove('slide-in-down');
+                    }, 300);
+                }, 300);
+
+                hasInteracted = true;
+            }
+        }
+
+        // Touch event handlers for swipe
+        const galleryContent = document.querySelector('.gallery-content');
+
+        if (galleryContent) {
+            galleryContent.addEventListener('touchstart', function(e) {
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            galleryContent.addEventListener('touchend', function(e) {
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum swipe distance
+            const swipeDistance = touchStartY - touchEndY;
+
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0) {
+                    // Swipe up - next image
+                    nextImage();
+                } else {
+                    // Swipe down - previous image
+                    prevImage();
+                }
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('gallery-modal');
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                nextImage();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                prevImage();
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                closeGallery();
+            }
+        });
+
+        // Close gallery on background click
+        document.getElementById('gallery-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGallery();
+            }
         });
     </script>
 </body>
