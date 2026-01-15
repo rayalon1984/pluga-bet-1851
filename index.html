@@ -552,12 +552,22 @@ ${siteUrl}`
         let currentImageIndex = 0;
         let touchStartY = 0;
         let touchEndY = 0;
+        let hasInteracted = false;
 
         // Open gallery
         function openGallery() {
             const modal = document.getElementById('gallery-modal');
+            const swipeIndicator = document.querySelector('.swipe-indicator');
+
             modal.classList.add('active');
             currentImageIndex = 0;
+            hasInteracted = false; // Reset interaction state on each open
+
+            // Show indicator again
+            if (swipeIndicator) {
+                swipeIndicator.classList.remove('hide');
+            }
+
             updateGalleryImage();
             document.body.style.overflow = 'hidden'; // Prevent background scroll
         }
@@ -574,6 +584,7 @@ ${siteUrl}`
             const image = document.getElementById('gallery-image');
             const currentSpan = document.getElementById('gallery-current');
             const totalSpan = document.getElementById('gallery-total');
+            const swipeIndicator = document.querySelector('.swipe-indicator');
 
             // Update image
             image.src = galleryImages[currentImageIndex];
@@ -581,6 +592,11 @@ ${siteUrl}`
             // Update counter
             currentSpan.textContent = currentImageIndex + 1;
             totalSpan.textContent = galleryImages.length;
+
+            // Hide swipe indicator after first interaction
+            if (hasInteracted && swipeIndicator) {
+                swipeIndicator.classList.add('hide');
+            }
         }
 
         // Next image (swipe up or right arrow)
@@ -588,6 +604,8 @@ ${siteUrl}`
             const image = document.getElementById('gallery-image');
 
             if (currentImageIndex < galleryImages.length - 1) {
+                hasInteracted = true; // Mark as interacted
+
                 // Add slide-up animation
                 image.classList.add('sliding-up');
 
@@ -609,6 +627,8 @@ ${siteUrl}`
             const image = document.getElementById('gallery-image');
 
             if (currentImageIndex > 0) {
+                hasInteracted = true; // Mark as interacted
+
                 // Add slide-down animation
                 image.classList.add('sliding-down');
 
