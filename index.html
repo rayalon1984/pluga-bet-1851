@@ -555,7 +555,6 @@ ${siteUrl}`
         let currentImageIndex = 0;
         let touchStartY = 0;
         let touchEndY = 0;
-        let hasInteracted = false;
 
         // Open gallery
         function openGallery() {
@@ -571,7 +570,6 @@ ${siteUrl}`
             const modal = document.getElementById('gallery-modal');
             modal.classList.remove('active');
             document.body.style.overflow = ''; // Restore scroll
-            hasInteracted = false;
         }
 
         // Update gallery image
@@ -579,7 +577,6 @@ ${siteUrl}`
             const image = document.getElementById('gallery-image');
             const currentSpan = document.getElementById('gallery-current');
             const totalSpan = document.getElementById('gallery-total');
-            const swipeIndicator = document.querySelector('.swipe-indicator');
 
             // Update image
             image.src = galleryImages[currentImageIndex];
@@ -587,11 +584,6 @@ ${siteUrl}`
             // Update counter
             currentSpan.textContent = currentImageIndex + 1;
             totalSpan.textContent = galleryImages.length;
-
-            // Hide swipe indicator after first interaction
-            if (hasInteracted && swipeIndicator) {
-                swipeIndicator.classList.add('hide');
-            }
         }
 
         // Next image (swipe up or right arrow)
@@ -612,8 +604,6 @@ ${siteUrl}`
                         image.classList.remove('slide-in-up');
                     }, 300);
                 }, 300);
-
-                hasInteracted = true;
             }
         }
 
@@ -635,8 +625,6 @@ ${siteUrl}`
                         image.classList.remove('slide-in-down');
                     }, 300);
                 }, 300);
-
-                hasInteracted = true;
             }
         }
 
