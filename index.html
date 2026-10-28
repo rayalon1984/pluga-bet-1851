@@ -49,7 +49,7 @@
                 <span class="l" data-he="הקדמי" data-en="front line">הקדמי</span>
             </h1>
             <div class="hero-foot">
-                <p class="hero-lead" data-he="פלוגה ב׳, מגיני העמק. תושבי הגליל שיוצאים לשמור על הבית, וצריכים ציוד. בחרו פריט ותרמו ישירות למ״פ." data-en="Company B, Valley Defenders. Galilee residents who guard our home and need gear. Pick an item and donate directly to the commander.">פלוגה ב׳, מגיני העמק. תושבי הגליל שיוצאים לשמור על הבית, וצריכים ציוד. בחרו פריט ותרמו ישירות למ״פ.</p>
+                <p class="hero-lead" data-he="פלוגה ב׳, מגיני העמק. תושבי הגליל שיוצאים לשמור על הבית, וצריכים ציוד. בחרו פריט ותרמו ישירות לפלוגה." data-en="Company B, Valley Defenders. Galilee residents who guard our home and need gear. Pick an item and donate directly to the company.">פלוגה ב׳, מגיני העמק. תושבי הגליל שיוצאים לשמור על הבית, וצריכים ציוד. בחרו פריט ותרמו ישירות לפלוגה.</p>
                 <a href="#gear" class="btn btn-ink"><span data-he="בחרו ציוד לתרום" data-en="Pick gear to donate">בחרו ציוד לתרום</span></a>
             </div>
             <figure class="hero-photo">
@@ -83,8 +83,8 @@
         <section id="gear" class="gear">
             <div class="gear-head">
                 <div class="gear-intro">
-                <h2 class="sec-title" data-he="טופס דרישת ציוד" data-en="Equipment requisition">טופס דרישת ציוד</h2>
-                <p class="gear-lead" data-he="אפסנאות פלוגה ב׳, גדוד 1851. סמנו מה אתם תורמים, ושלחו למ״פ הודעה אחת מוכנה." data-en="Company B quartermaster, Battalion 1851. Tick what you donate and send the commander one ready-made message.">אפסנאות פלוגה ב׳, גדוד 1851. סמנו מה אתם תורמים, ושלחו למ״פ הודעה אחת מוכנה.</p>
+                <h2 class="sec-title" data-he="ציוד ללוחמים" data-en="Gear for the soldiers">ציוד ללוחמים</h2>
+                <p class="gear-lead" data-he="סמנו מה אתם רוצים לתרום, ושלחו לפלוגה הודעה אחת מוכנה." data-en="Tick what you would like to donate and send the company one ready-made message.">סמנו מה אתם רוצים לתרום, ושלחו לפלוגה הודעה אחת מוכנה.</p>
                 </div>
                 <figure class="gear-photo reveal">
                     <img src="img/boots.jpg" width="579" height="260" alt="נעליים וברכיות של לוחמי הפלוגה" loading="lazy">
@@ -146,8 +146,8 @@
                     <p class="basket-label" data-he="הסל שלכם" data-en="Your basket">הסל שלכם</p>
                     <p class="basket-total" id="basket-total">₪0</p>
                     <p class="basket-count"><span id="basket-count">0</span> <span data-he="פריטים" data-en="items">פריטים</span></p>
-                    <a id="basket-send" class="btn btn-gold" href="https://wa.me/972543320613" target="_blank" rel="noopener"><span data-he="שלחו למ״פ בוואטסאפ" data-en="Send to the commander">שלחו למ״פ בוואטסאפ</span></a>
-                    <p class="basket-note" data-he="ההודעה נפתחת בוואטסאפ, מוכנה לשליחה. המ״פ חוזר אליכם עם הפרטים." data-en="The message opens in WhatsApp, ready to send. The commander replies with the details.">ההודעה נפתחת בוואטסאפ, מוכנה לשליחה. המ״פ חוזר אליכם עם הפרטים.</p>
+                    <a id="basket-send" class="btn btn-gold" href="https://wa.me/972543320613" target="_blank" rel="noopener"><span data-he="שלחו לפלוגה בוואטסאפ" data-en="Send to the company">שלחו לפלוגה בוואטסאפ</span></a>
+                    <p class="basket-note" data-he="ההודעה נפתחת בוואטסאפ, מוכנה לשליחה. המ״פ, איש הקשר של הפלוגה, חוזר אליכם עם הפרטים." data-en="The message opens in WhatsApp, ready to send. The commander, the company's contact, replies with the details.">ההודעה נפתחת בוואטסאפ, מוכנה לשליחה. המ״פ, איש הקשר של הפלוגה, חוזר אליכם עם הפרטים.</p>
                 </aside>
             </div>
         </section>
@@ -356,8 +356,8 @@
         // ============================================
         function shareMessage() {
             return currentLang === 'he'
-                ? `🇮🇱 בואו לתמוך בלוחמי פלוגה ב׳ - מגיני העמק!\n\nרוצים לתרום? שלחו הודעה ישירות למ״פ 👇\n${commanderWa}?text=${encodeURIComponent(donateMessages.he)}\n\nכל תרומה עושה את ההבדל 💪\n${siteUrl}` // taste-skill-ignore: emoji is message text, not UI
-                : `🇮🇱 Support Company B - Valley Defenders!\n\nWant to donate? Message the company commander directly 👇\n${commanderWa}?text=${encodeURIComponent(donateMessages.en)}\n\nEvery contribution makes a difference 💪\n${siteUrl}`; // taste-skill-ignore: emoji is message text, not UI
+                ? `🇮🇱 בואו לתמוך בלוחמי פלוגה ב׳ - מגיני העמק!\n\nרוצים לתרום? שלחו הודעה ישירות לפלוגה 👇\n${commanderWa}?text=${encodeURIComponent(donateMessages.he)}\n\nכל תרומה עושה את ההבדל 💪\n${siteUrl}` // taste-skill-ignore: emoji is message text, not UI
+                : `🇮🇱 Support Company B - Valley Defenders!\n\nWant to donate? Message the company directly 👇\n${commanderWa}?text=${encodeURIComponent(donateMessages.en)}\n\nEvery contribution makes a difference 💪\n${siteUrl}`; // taste-skill-ignore: emoji is message text, not UI
         }
 
         function updateShare() {
