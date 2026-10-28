@@ -6,6 +6,15 @@
     <title>פלוגה ב׳ - יחד ננצח | Company B - Together We Stand</title>
     <meta name="description" content="עזרו לנו לצייד את לוחמי פלוגה ב׳ - כל תרומה עושה את ההבדל">
 
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:title" content="פלוגה ב׳ - יחד ננצח">
+    <meta property="og:description" content="עזרו לנו לצייד את לוחמי פלוגה ב׳ - כל תרומה עושה את ההבדל">
+    <meta property="og:url" content="https://rayalon1984.github.io/pluga-bet-1851/">
+    <meta property="og:image" content="https://rayalon1984.github.io/pluga-bet-1851/ae00d74b-f38a-428d-980e-6839eaf25b83.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <script>document.documentElement.classList.add('js');</script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +27,8 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎖️</text></svg>">
 </head>
 <body>
+    <a class="skip-link" href="#main" data-he="דלג לתוכן" data-en="Skip to content">דלג לתוכן</a>
+
     <!-- Language Toggle -->
     <button class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">
         <span class="lang-text">EN</span>
@@ -31,6 +42,7 @@
         </svg>
     </a>
 
+    <main id="main">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -51,7 +63,6 @@
     <!-- Who We Are Section -->
     <section class="who-section">
         <div class="container">
-            <div class="who-icon">🛡️</div>
             <h2 class="section-title" data-he="מי אנחנו" data-en="Who We Are">מי אנחנו</h2>
 
             <div class="who-content">
@@ -68,127 +79,106 @@
         </div>
     </section>
 
-    <!-- Photo Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="section-title" data-he="הפלוגה בפעולה" data-en="Our Company in Action">הפלוגה בפעולה</h2>
-            <p class="section-subtitle" data-he="הכירו אותנו דרך התמונות שלנו" data-en="Get to know us through our photos">הכירו אותנו דרך התמונות שלנו</p>
-
-            <button class="gallery-open-btn" onclick="openGallery()">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <polyline points="21 15 16 10 5 21"/>
-                </svg>
-                <span data-he="פתח גלריה" data-en="Open Gallery">פתח גלריה</span>
-            </button>
-        </div>
-    </section>
-
     <!-- Why Section -->
     <section class="why-section">
         <div class="container">
             <h2 class="section-title" data-he="מה התרומה שלכם קונה?" data-en="What Does Your Donation Buy?">מה התרומה שלכם קונה?</h2>
-            <p class="section-subtitle" data-he="כל שקל הופך לציוד אמיתי ללוחמים" data-en="Every shekel becomes real equipment for soldiers">כל שקל הופך לציוד אמיתי ללוחמים</p>
+            <p class="section-subtitle" data-he="כל שקל הופך לציוד אמיתי ללוחמים. לחצו על פריט כדי לתרום אותו." data-en="Every shekel becomes real equipment for soldiers. Tap an item to donate it.">כל שקל הופך לציוד אמיתי ללוחמים. לחצו על פריט כדי לתרום אותו.</p>
 
             <div class="equipment-grid">
                 <!-- ציוד מבצעי -->
                 <div class="equipment-category">
                     <div class="category-header">
-                        <span class="category-icon">🎯</span>
                         <h3 data-he="ציוד מבצעי" data-en="Tactical Gear">ציוד מבצעי</h3>
                     </div>
                     <div class="equipment-list">
-                        <div class="equipment-item">
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="רחפן מבצעי" data-en="Tactical Drone">רחפן מבצעי</span>
                             <span class="item-price">₪32,000</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="כוונת השלכה" data-en="Red Dot Sight">כוונת השלכה</span>
                             <span class="item-price">₪1,800</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="מכפיל לקלע" data-en="Scope Magnifier">מכפיל לקלע</span>
                             <span class="item-price">₪1,200</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="משקפת מפקד" data-en="Commander Binoculars">משקפת מפקד</span>
                             <span class="item-price">₪1,000</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="פאק נשק מפקד" data-en="Weapon Accessories Kit">פאק נשק מפקד</span>
                             <span class="item-price">₪7,000</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- הגנה משופרת -->
                 <div class="equipment-category">
                     <div class="category-header">
-                        <span class="category-icon">🛡️</span>
                         <h3 data-he="הגנה משופרת" data-en="Enhanced Protection">הגנה משופרת</h3>
                     </div>
                     <div class="equipment-list">
-                        <div class="equipment-item">
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="משקפי מגן" data-en="Protective Goggles">משקפי מגן</span>
                             <span class="item-price">₪200</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="ברכיות טקטיות" data-en="Tactical Knee Pads">ברכיות טקטיות</span>
                             <span class="item-price">₪120</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="נעליים טקטיות" data-en="Tactical Boots">נעליים טקטיות</span>
                             <span class="item-price">₪450</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="וסט לוחם" data-en="Combat Vest">וסט לוחם</span>
                             <span class="item-price">₪4,900</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="מדים טקטיים" data-en="Tactical Uniform">מדים טקטיים</span>
                             <span class="item-price">₪650</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- ציוד אישי -->
                 <div class="equipment-category">
                     <div class="category-header">
-                        <span class="category-icon">🎒</span>
                         <h3 data-he="ציוד אישי" data-en="Personal Equipment">ציוד אישי</h3>
                     </div>
                     <div class="equipment-list">
-                        <div class="equipment-item">
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="מעיל חורף" data-en="Winter Jacket">מעיל חורף</span>
                             <span class="item-price">₪380</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="רצועת נשק" data-en="Weapon Sling">רצועת נשק</span>
                             <span class="item-price">₪120</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="חגורה" data-en="Tactical Belt">חגורה</span>
                             <span class="item-price">₪75</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 <!-- רפואה והישרדות -->
                 <div class="equipment-category">
                     <div class="category-header">
-                        <span class="category-icon">⚕️</span>
                         <h3 data-he="רפואה והישרדות" data-en="Medical & Survival">רפואה והישרדות</h3>
                     </div>
                     <div class="equipment-list">
-                        <div class="equipment-item">
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="ערכת עזרה ראשונה" data-en="Medical Emergency Kit">ערכת עזרה ראשונה</span>
                             <span class="item-price">₪320</span>
-                        </div>
-                        <div class="equipment-item">
+                        </a>
+                        <a class="equipment-item" href="#donate">
                             <span class="item-name" data-he="ערכת מזון ללוחם" data-en="Combat Field Ration">ערכת מזון ללוחם</span>
                             <span class="item-price">₪180</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -217,6 +207,7 @@
                     </svg>
                     <span data-he="אני רוצה לתרום" data-en="I Want to Donate">אני רוצה לתרום</span>
                 </a>
+                <p class="commander-phone"><span data-he="אין וואטסאפ? התקשרו:" data-en="No WhatsApp? Call:">אין וואטסאפ? התקשרו:</span> <a href="tel:+972543320613" dir="ltr">054-332-0613</a></p>
             </div>
         </div>
     </section>
@@ -256,6 +247,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -263,46 +256,6 @@
             <p class="footer-credit"><span data-he="פלוגה ב׳ • מגיני העמק" data-en="Company B • Valley Defenders">פלוגה ב׳ • מגיני העמק</span> • <span id="current-year"></span></p>
         </div>
     </footer>
-
-    <!-- Gallery Modal -->
-    <div id="gallery-modal" class="gallery-modal">
-        <button class="gallery-close" onclick="closeGallery()" title="Close (ESC)">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="6" x2="6" y2="18"/>
-                <line x1="6" y1="6" x2="18" y2="18"/>
-            </svg>
-        </button>
-
-        <div class="gallery-content">
-            <img id="gallery-image" src="" alt="Gallery Image" class="gallery-image">
-
-            <!-- Swipe Indicator (shows on first image) -->
-            <div class="swipe-indicator">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-                    <path d="M7.41 20.41L12 15.83l4.59 4.58L18 19l-6-6-6 6z" opacity="0.5"/>
-                </svg>
-                <p data-he="החלק למעלה/למטה" data-en="Swipe up/down">החלק למעלה/למטה</p>
-            </div>
-
-            <!-- Navigation Arrows (Desktop) -->
-            <button class="gallery-nav prev" onclick="prevImage()" title="Previous (Left Arrow)">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="15 18 9 12 15 6"/>
-                </svg>
-            </button>
-            <button class="gallery-nav next" onclick="nextImage()" title="Next (Right Arrow)">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="9 18 15 12 9 6"/>
-                </svg>
-            </button>
-
-            <!-- Counter -->
-            <div class="gallery-counter">
-                <span id="gallery-current">1</span> / <span id="gallery-total">10</span>
-            </div>
-        </div>
-    </div>
 
     <script>
         // Current language state
@@ -317,6 +270,12 @@
         const donateMessages = {
             he: 'שלום, אני מעוניין לתרום לפלוגה ב׳. כיצד אוכל לעזור?',
             en: "Hi, I'd like to donate to Company B. How can I help?"
+        };
+
+        // Per-item donate message to commander
+        const itemMessages = {
+            he: (name, price) => `שלום, אני מעוניין לתרום ${name} (${price}) לפלוגה ב׳.`,
+            en: (name, price) => `Hi, I'd like to donate ${name} (${price}) to Company B.`
         };
 
         // Toggle language
@@ -359,6 +318,15 @@
             if (donateWaBtn) {
                 donateWaBtn.href = 'https://wa.me/972543320613?text=' + encodeURIComponent(donateMessages[lang]);
             }
+
+            // Each equipment row opens WhatsApp with that item pre-filled
+            document.querySelectorAll('.equipment-item').forEach(item => {
+                const name = item.querySelector('.item-name').textContent;
+                const price = item.querySelector('.item-price').textContent;
+                item.href = 'https://wa.me/972543320613?text=' + encodeURIComponent(itemMessages[lang](name, price));
+                item.target = '_blank';
+                item.rel = 'noopener';
+            });
 
             currentLang = lang;
         }
@@ -415,7 +383,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.equipment-category, .contact-commander-card, .who-section, .gallery-section').forEach(el => {
+        document.querySelectorAll('.equipment-category, .contact-commander-card, .who-section').forEach(el => {
             observer.observe(el);
         });
 
@@ -469,164 +437,6 @@ ${siteUrl}`
             });
         }
 
-        // ============================================
-        // Photo Gallery Functionality
-        // ============================================
-
-        // Mock images (10 placeholder images with different colors)
-        const galleryImages = [
-            'https://placehold.co/1200x800/2d3a2e/f8f6f1?text=Company+B+-+Photo+1',
-            'https://placehold.co/1200x800/4a5d4c/f8f6f1?text=Company+B+-+Photo+2',
-            'https://placehold.co/1200x800/6b7d6c/f8f6f1?text=Company+B+-+Photo+3',
-            'https://placehold.co/1200x800/c9a227/2d3a2e?text=Company+B+-+Photo+4',
-            'https://placehold.co/1200x800/d4c5a9/2d3a2e?text=Company+B+-+Photo+5',
-            'https://placehold.co/1200x800/2d3a2e/c9a227?text=Company+B+-+Photo+6',
-            'https://placehold.co/1200x800/4a5d4c/e8dcc6?text=Company+B+-+Photo+7',
-            'https://placehold.co/1200x800/3a4d3c/f8f6f1?text=Company+B+-+Photo+8',
-            'https://placehold.co/1200x800/c9a227/f8f6f1?text=Company+B+-+Photo+9',
-            'https://placehold.co/1200x800/2d3a2e/d4c5a9?text=Company+B+-+Photo+10'
-        ];
-
-        let currentImageIndex = 0;
-        let touchStartY = 0;
-        let touchEndY = 0;
-        let hasInteracted = false;
-
-        // Open gallery
-        function openGallery() {
-            const modal = document.getElementById('gallery-modal');
-            modal.classList.add('active');
-            currentImageIndex = 0;
-            updateGalleryImage();
-            document.body.style.overflow = 'hidden'; // Prevent background scroll
-        }
-
-        // Close gallery
-        function closeGallery() {
-            const modal = document.getElementById('gallery-modal');
-            modal.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scroll
-            hasInteracted = false;
-        }
-
-        // Update gallery image
-        function updateGalleryImage() {
-            const image = document.getElementById('gallery-image');
-            const currentSpan = document.getElementById('gallery-current');
-            const totalSpan = document.getElementById('gallery-total');
-            const swipeIndicator = document.querySelector('.swipe-indicator');
-
-            // Update image
-            image.src = galleryImages[currentImageIndex];
-
-            // Update counter
-            currentSpan.textContent = currentImageIndex + 1;
-            totalSpan.textContent = galleryImages.length;
-
-            // Hide swipe indicator after first interaction
-            if (hasInteracted && swipeIndicator) {
-                swipeIndicator.classList.add('hide');
-            }
-        }
-
-        // Next image (swipe up or right arrow)
-        function nextImage() {
-            const image = document.getElementById('gallery-image');
-
-            if (currentImageIndex < galleryImages.length - 1) {
-                // Add slide-up animation
-                image.classList.add('sliding-up');
-
-                setTimeout(() => {
-                    currentImageIndex++;
-                    image.classList.remove('sliding-up');
-                    image.classList.add('slide-in-up');
-                    updateGalleryImage();
-
-                    setTimeout(() => {
-                        image.classList.remove('slide-in-up');
-                    }, 300);
-                }, 300);
-
-                hasInteracted = true;
-            }
-        }
-
-        // Previous image (swipe down or left arrow)
-        function prevImage() {
-            const image = document.getElementById('gallery-image');
-
-            if (currentImageIndex > 0) {
-                // Add slide-down animation
-                image.classList.add('sliding-down');
-
-                setTimeout(() => {
-                    currentImageIndex--;
-                    image.classList.remove('sliding-down');
-                    image.classList.add('slide-in-down');
-                    updateGalleryImage();
-
-                    setTimeout(() => {
-                        image.classList.remove('slide-in-down');
-                    }, 300);
-                }, 300);
-
-                hasInteracted = true;
-            }
-        }
-
-        // Touch event handlers for swipe
-        const galleryContent = document.querySelector('.gallery-content');
-
-        if (galleryContent) {
-            galleryContent.addEventListener('touchstart', function(e) {
-                touchStartY = e.changedTouches[0].screenY;
-            }, { passive: true });
-
-            galleryContent.addEventListener('touchend', function(e) {
-                touchEndY = e.changedTouches[0].screenY;
-                handleSwipe();
-            }, { passive: true });
-        }
-
-        function handleSwipe() {
-            const swipeThreshold = 50; // Minimum swipe distance
-            const swipeDistance = touchStartY - touchEndY;
-
-            if (Math.abs(swipeDistance) > swipeThreshold) {
-                if (swipeDistance > 0) {
-                    // Swipe up - next image
-                    nextImage();
-                } else {
-                    // Swipe down - previous image
-                    prevImage();
-                }
-            }
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const modal = document.getElementById('gallery-modal');
-            if (!modal.classList.contains('active')) return;
-
-            if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
-                e.preventDefault();
-                nextImage();
-            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
-                e.preventDefault();
-                prevImage();
-            } else if (e.key === 'Escape') {
-                e.preventDefault();
-                closeGallery();
-            }
-        });
-
-        // Close gallery on background click
-        document.getElementById('gallery-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeGallery();
-            }
-        });
     </script>
 </body>
 </html>
