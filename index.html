@@ -201,6 +201,7 @@
                     </svg>
                 </div>
                 <h3 data-he="שלחו הודעה ישירות למפקד" data-en="Message the Commander Directly">שלחו הודעה ישירות למפקד</h3>
+                <p class="commander-name" data-he="רס״ן (מיל׳) איתי חיניץ" data-en="Maj. (Res.) Itay Hinitz">רס״ן (מיל׳) איתי חיניץ</p>
                 <p class="commander-desc" data-he="לחצו על הכפתור – הודעה מוכנה תיפתח אצלכם בוואטסאפ. המפקד יחזור אליכם בהקדם עם כל הפרטים." data-en="Tap the button – a ready-made message will open in your WhatsApp. The commander will get back to you with all the details.">לחצו על הכפתור – הודעה מוכנה תיפתח אצלכם בוואטסאפ. המפקד יחזור אליכם בהקדם עם כל הפרטים.</p>
                 <a id="donate-whatsapp-btn" href="#" class="donate-whatsapp-btn" target="_blank" rel="noopener">
                     <svg width="24" height="24" viewBox="0 0 448 512" fill="currentColor">
@@ -269,14 +270,14 @@
 
         // Pre-written donate message to commander
         const donateMessages = {
-            he: 'שלום, אני מעוניין לתרום לפלוגה ב׳. כיצד אוכל לעזור?',
-            en: "Hi, I'd like to donate to Company B. How can I help?"
+            he: 'שלום איתי, אני מעוניין לתרום לפלוגה ב׳. כיצד אוכל לעזור?',
+            en: "Hi Itay, I'd like to donate to Company B. How can I help?"
         };
 
         // Per-item donate message to commander
         const itemMessages = {
-            he: (name, price) => `שלום, אני מעוניין לתרום ${name} (${price}) לפלוגה ב׳.`,
-            en: (name, price) => `Hi, I'd like to donate ${name} (${price}) to Company B.`
+            he: (name, price) => `שלום איתי, אני מעוניין לתרום ${name} (${price}) לפלוגה ב׳.`,
+            en: (name, price) => `Hi Itay, I'd like to donate ${name} (${price}) to Company B.`
         };
 
         // Toggle language

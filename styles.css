@@ -451,6 +451,13 @@ body {
     margin-bottom: 16px;
 }
 
+.commander-name {
+    color: var(--olive);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: -8px 0 16px;
+}
+
 .commander-desc {
     color: var(--text-light);
     font-size: 1.05rem;
