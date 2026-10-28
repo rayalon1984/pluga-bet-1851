@@ -2,6 +2,20 @@
 
 This document provides comprehensive information about the pluga-bet-1851 repository for AI assistants to understand and work with the codebase effectively.
 
+## Current State (Oct 2026): read this first
+
+The site was redesigned. Where this guide disagrees with the list below, the list wins.
+
+- **Design:** "loud and flat" poster. Heavy Rubik (self-hosted in `fonts/`), flat olive/gold/sand panels, square corners, one marquee band. Hero headline is `אנחנו הקו הקדמי`.
+- **Donation:** WhatsApp/phone only, to the company commander (רס״ן (מיל׳) איתי חיניץ, "המ״פ"). PayBox, Bit, bank transfer and the photo gallery were removed on purpose.
+- **Equipment form (`#gear`):** each priced row is a checkbox with a quantity stepper; `updateBasket()` builds one pre-filled WhatsApp message with the total. Without JS the form does nothing and the button sends the generic message.
+- **Images:** crops of the unit's own photo in `img/` (cut from `ae00d74b-...jpeg`). Add real photos there; no placeholder images.
+- **Language:** `data-he`/`data-en` on every text node, `dir` swaps rtl/ltr, CSS uses logical properties (`inline-start`, `margin-inline-end`), so keep it that way.
+- **Tooling:** `.claude/skills/` holds Impeccable and Taste Skill. `node .claude/skills/taste-skill/scripts/lint.mjs index.html styles.css` and `inspect.mjs` (needs `CHROME_PATH`, `--no-sandbox` as root) check the page.
+- **Open items:** receipt / non-profit details are not on the page yet; no video.
+
+---
+
 ## Project Overview
 
 **Project Name:** פלוגה ב׳ (Company B) - Valley Defenders Fundraising Website

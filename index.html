@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#2d3a2e">
+    <meta name="theme-color" content="#c9a227">
     <title>פלוגה ב׳ - יחד ננצח | Company B - Together We Stand</title>
     <meta name="description" content="עזרו לנו לצייד את לוחמי פלוגה ב׳ - כל תרומה עושה את ההבדל">
 
@@ -16,246 +16,178 @@
     <meta name="twitter:card" content="summary_large_image">
     <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Fonts (Rubik, self-hosted) -->
+    <link rel="preload" href="fonts/rubik-hebrew-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/rubik-hebrew-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎖️</text></svg>">
+    <link rel="icon" type="image/jpeg" href="6886f148-3bfd-4541-84b5-32b428736f2b.jpeg">
 </head>
 <body>
     <a class="skip-link" href="#main" data-he="דלג לתוכן" data-en="Skip to content">דלג לתוכן</a>
 
-    <!-- Language Toggle -->
-    <button class="lang-toggle" onclick="toggleLanguage()" title="Switch Language">
-        <span class="lang-text">EN</span>
-        <span class="lang-flag">🇺🇸</span>
-    </button>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/972543320613" class="whatsapp-float" target="_blank" rel="noopener" title="WhatsApp">
-        <svg width="48" height="48" viewBox="0 0 448 512" fill="#25D366">
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-        </svg>
-    </a>
+    <!-- Top bar -->
+    <header class="top">
+        <a class="brand" href="#top" aria-label="פלוגה ב׳">
+            <img src="6886f148-3bfd-4541-84b5-32b428736f2b.jpeg" alt="" width="44" height="44">
+            <span data-he="פלוגה ב׳ • גדוד 1851" data-en="Company B • Battalion 1851">פלוגה ב׳ • גדוד 1851</span>
+        </a>
+        <button class="lang-toggle" type="button" onclick="toggleLanguage()" title="Switch Language">
+            <span class="lang-text">EN</span>
+            <span class="lang-flag">🇺🇸</span>
+        </button>
+    </header>
 
     <main id="main">
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <img src="6886f148-3bfd-4541-84b5-32b428736f2b.jpeg" alt="שומרי העמק" class="logo-badge" width="50" height="50" style="width:50px !important;height:50px !important;max-width:50px !important;max-height:50px !important;">
-        <div class="hero-content">
-            <div class="badge" data-he="פלוגה ב׳ • מגיני העמק" data-en="Company B • Valley Defenders">פלוגה ב׳ • מגיני העמק</div>
-            <h1 data-he="יחד ננצח" data-en="Together We Stand">יחד ננצח</h1>
-            <p class="hero-subtitle" data-he="עזרו לנו לצייד את הלוחמים שלנו בציוד המשופר ביותר" data-en="Help us equip our soldiers with the best gear">עזרו לנו לצייד את הלוחמים שלנו בציוד המשופר ביותר</p>
-            <a href="#donate" class="cta-button">
-                <span data-he="אני רוצה לתרום" data-en="I Want to Donate">אני רוצה לתרום</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12l7 7 7-7"/>
-                </svg>
-            </a>
-        </div>
-    </section>
+        <!-- Hero -->
+        <section id="top" class="hero">
+            <h1 class="hero-title">
+                <span class="l" data-he="אנחנו הקו" data-en="We are the">אנחנו הקו</span>
+                <span class="l" data-he="הקדמי" data-en="front line">הקדמי</span>
+            </h1>
+            <div class="hero-foot">
+                <p class="hero-lead" data-he="פלוגה ב׳, מגיני העמק. תושבי הגליל שיוצאים לשמור על הבית, וצריכים ציוד. בחרו פריט ותרמו ישירות למ״פ." data-en="Company B, Valley Defenders. Galilee residents who guard our home and need gear. Pick an item and donate directly to the commander.">פלוגה ב׳, מגיני העמק. תושבי הגליל שיוצאים לשמור על הבית, וצריכים ציוד. בחרו פריט ותרמו ישירות למ״פ.</p>
+                <a href="#gear" class="btn btn-ink"><span data-he="בחרו ציוד לתרום" data-en="Pick gear to donate">בחרו ציוד לתרום</span></a>
+            </div>
+            <figure class="hero-photo">
+                <img src="img/squad-tall.jpg" width="820" height="877" alt="לוחמי פלוגה ב׳ בשטח">
+            </figure>
+        </section>
 
-    <!-- Who We Are Section -->
-    <section class="who-section">
-        <div class="container">
-            <h2 class="section-title" data-he="מי אנחנו" data-en="Who We Are">מי אנחנו</h2>
+        <!-- Who we are -->
+        <section id="about" class="about">
+            <h2 class="sec-title" data-he="מי אנחנו" data-en="Who we are">מי אנחנו</h2>
+            <div class="about-grid">
+                <p class="panel p-dark reveal" data-he="הוקמנו בעקבות מסקנות השבעה באוקטובר." data-en="Founded on the lessons of October 7th.">הוקמנו בעקבות מסקנות השבעה באוקטובר.</p>
+                <p class="panel p-gold reveal" data-he="חי״ר מהגליל. זמינים בכל רגע." data-en="Infantry from the Galilee. Ready any moment.">חי״ר מהגליל. זמינים בכל רגע.</p>
+                <figure class="panel p-photo reveal">
+                    <img src="img/right.jpg" width="514" height="540" alt="לוחמי פלוגה ב׳ בשטח" loading="lazy">
+                </figure>
+                <p class="panel p-paper reveal" data-he="גרים כאן, ליד הגבול. מגדלים כאן ילדים וחקלאות מאז קום המדינה. לא מהמרכז." data-en="We live here, by the border, raising families and working the land since the State was founded. Not from the center.">גרים כאן, ליד הגבול. מגדלים כאן ילדים וחקלאות מאז קום המדינה. לא מהמרכז.</p>
+                <p class="panel p-olive reveal" data-he="להגן על העמק, הגליל ומדינת ישראל." data-en="Protect the Valley, the Galilee and Israel.">להגן על העמק, הגליל ומדינת ישראל.</p>
+            </div>
+        </section>
 
-            <div class="who-content">
-                <h3 data-he="פלוגה ב׳ – מגיני העמק הוקמה בעקבות מסקנות השבעה באוקטובר." data-en="Company B – Guardians of the Valley was established following the lessons of October 7th.">פלוגה ב׳ – מגיני העמק הוקמה בעקבות מסקנות השבעה באוקטובר.</h3>
-
-                <p data-he="כוח חי״ר ייעודי, המבוסס על תושבי הגליל, הזמינים בכל רגע ללחימה ולהגנה על הבית." data-en="We are an infantry force composed of Galilee residents, ready at any moment to defend and fight for our home.">כוח חי״ר ייעודי, המבוסס על תושבי הגליל, הזמינים בכל רגע ללחימה ולהגנה על הבית.</p>
-
-                <p data-he="אנחנו חיים כאן, סמוך לגבול - מגדלים כאן את ילדינו, את החקלאות שלנו ואת ההתיישבות מאז קום המדינה." data-en="We live here, near the border. We raise our families here, cultivate our land, and uphold the Zionist settlement of the Galilee since the founding of the State of Israel.">אנחנו חיים כאן, סמוך לגבול - מגדלים כאן את ילדינו, את החקלאות שלנו ואת ההתיישבות מאז קום המדינה.</p>
-
-                <p data-he="אנחנו לא מגיעים מהמרכז - אנחנו הקו הקדמי." data-en="We are not a distant force - we are the front line.">אנחנו לא מגיעים מהמרכז - אנחנו הקו הקדמי.</p>
-
-                <p class="who-mission" data-he="השליחות שלנו ברורה: להגן על העמק, על הגליל ועל מדינת ישראל." data-en="Our mission is clear: to protect the Valley, the Galilee, and the State of Israel.">השליחות שלנו ברורה: להגן על העמק, על הגליל ועל מדינת ישראל.</p>
+        <!-- Marquee: the one loud moment -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span data-he="פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ● פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ●" data-en="Company B ● Valley Defenders ● Battalion 1851 ● Company B ● Valley Defenders ● Battalion 1851 ●">פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ● פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ●</span>
+                <span data-he="פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ● פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ●" data-en="Company B ● Valley Defenders ● Battalion 1851 ● Company B ● Valley Defenders ● Battalion 1851 ●">פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ● פלוגה ב׳ ● מגיני העמק ● גדוד 1851 ●</span>
             </div>
         </div>
-    </section>
 
-    <!-- Why Section -->
-    <section class="why-section">
-        <div class="container">
-            <h2 class="section-title" data-he="מה התרומה שלכם קונה?" data-en="What Does Your Donation Buy?">מה התרומה שלכם קונה?</h2>
-            <p class="section-subtitle" data-he="כל שקל הופך לציוד אמיתי ללוחמים. לחצו על פריט כדי לתרום אותו." data-en="Every shekel becomes real equipment for soldiers. Tap an item to donate it.">כל שקל הופך לציוד אמיתי ללוחמים. לחצו על פריט כדי לתרום אותו.</p>
-
-            <div class="equipment-grid">
-                <!-- ציוד מבצעי -->
-                <div class="equipment-category">
-                    <div class="category-header">
-                        <h3 data-he="ציוד מבצעי" data-en="Tactical Gear">ציוד מבצעי</h3>
-                    </div>
-                    <div class="equipment-list">
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="רחפן מבצעי" data-en="Tactical Drone">רחפן מבצעי</span>
-                            <span class="item-price">₪32,000</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="כוונת השלכה" data-en="Red Dot Sight">כוונת השלכה</span>
-                            <span class="item-price">₪1,800</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="מכפיל לקלע" data-en="Scope Magnifier">מכפיל לקלע</span>
-                            <span class="item-price">₪1,200</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="משקפת מפקד" data-en="Commander Binoculars">משקפת מפקד</span>
-                            <span class="item-price">₪1,000</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="פאק נשק מפקד" data-en="Weapon Accessories Kit">פאק נשק מפקד</span>
-                            <span class="item-price">₪7,000</span>
-                        </a>
-                    </div>
+        <!-- Equipment requisition form: the live donation basket -->
+        <section id="gear" class="gear">
+            <div class="gear-head">
+                <div class="gear-intro">
+                <h2 class="sec-title" data-he="טופס דרישת ציוד" data-en="Equipment requisition">טופס דרישת ציוד</h2>
+                <p class="gear-lead" data-he="אפסנאות פלוגה ב׳, גדוד 1851. סמנו מה אתם תורמים, ושלחו למ״פ הודעה אחת מוכנה." data-en="Company B quartermaster, Battalion 1851. Tick what you donate and send the commander one ready-made message.">אפסנאות פלוגה ב׳, גדוד 1851. סמנו מה אתם תורמים, ושלחו למ״פ הודעה אחת מוכנה.</p>
                 </div>
-
-                <!-- הגנה משופרת -->
-                <div class="equipment-category">
-                    <div class="category-header">
-                        <h3 data-he="הגנה משופרת" data-en="Enhanced Protection">הגנה משופרת</h3>
-                    </div>
-                    <div class="equipment-list">
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="משקפי מגן" data-en="Protective Goggles">משקפי מגן</span>
-                            <span class="item-price">₪200</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="ברכיות טקטיות" data-en="Tactical Knee Pads">ברכיות טקטיות</span>
-                            <span class="item-price">₪120</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="נעליים טקטיות" data-en="Tactical Boots">נעליים טקטיות</span>
-                            <span class="item-price">₪450</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="וסט לוחם" data-en="Combat Vest">וסט לוחם</span>
-                            <span class="item-price">₪4,900</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="מדים טקטיים" data-en="Tactical Uniform">מדים טקטיים</span>
-                            <span class="item-price">₪650</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ציוד אישי -->
-                <div class="equipment-category">
-                    <div class="category-header">
-                        <h3 data-he="ציוד אישי" data-en="Personal Equipment">ציוד אישי</h3>
-                    </div>
-                    <div class="equipment-list">
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="מעיל חורף" data-en="Winter Jacket">מעיל חורף</span>
-                            <span class="item-price">₪380</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="רצועת נשק" data-en="Weapon Sling">רצועת נשק</span>
-                            <span class="item-price">₪120</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="חגורה" data-en="Tactical Belt">חגורה</span>
-                            <span class="item-price">₪75</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- רפואה והישרדות -->
-                <div class="equipment-category">
-                    <div class="category-header">
-                        <h3 data-he="רפואה והישרדות" data-en="Medical & Survival">רפואה והישרדות</h3>
-                    </div>
-                    <div class="equipment-list">
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="ערכת עזרה ראשונה" data-en="Medical Emergency Kit">ערכת עזרה ראשונה</span>
-                            <span class="item-price">₪320</span>
-                        </a>
-                        <a class="equipment-item" href="#donate">
-                            <span class="item-name" data-he="ערכת מזון ללוחם" data-en="Combat Field Ration">ערכת מזון ללוחם</span>
-                            <span class="item-price">₪180</span>
-                        </a>
-                    </div>
-                </div>
+                <figure class="gear-photo reveal">
+                    <img src="img/boots.jpg" width="579" height="260" alt="נעליים וברכיות של לוחמי הפלוגה" loading="lazy">
+                </figure>
             </div>
 
-            <p class="equipment-note" data-he="* המחירים משוערים ומשתנים לפי ספק ודגם" data-en="* Prices are estimated and vary by supplier and model">* המחירים משוערים ומשתנים לפי ספק ודגם</p>
-        </div>
-    </section>
+            <div class="gear-body">
+                <form class="form" onsubmit="return false">
+                    <section class="group reveal">
+                        <h3 class="group-title" data-he="ציוד מבצעי" data-en="Tactical gear">ציוד מבצעי</h3>
+                        <ul>
+                            <li class="row" data-price="32000"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="רחפן מבצעי" data-en="Tactical Drone">רחפן מבצעי</span></label><span class="qty"></span><span class="price">₪32,000</span></li>
+                            <li class="row" data-price="1800"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="כוונת השלכה" data-en="Red Dot Sight">כוונת השלכה</span></label><span class="qty"></span><span class="price">₪1,800</span></li>
+                            <li class="row" data-price="1200"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="מכפיל לקלע" data-en="Scope Magnifier">מכפיל לקלע</span></label><span class="qty"></span><span class="price">₪1,200</span></li>
+                            <li class="row" data-price="1000"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="משקפת מפקד" data-en="Commander Binoculars">משקפת מפקד</span></label><span class="qty"></span><span class="price">₪1,000</span></li>
+                            <li class="row" data-price="7000"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="פאק נשק מפקד" data-en="Weapon Accessories Kit">פאק נשק מפקד</span></label><span class="qty"></span><span class="price">₪7,000</span></li>
+                        </ul>
+                    </section>
 
-    <!-- Donate Section -->
-    <section id="donate" class="donate-section">
-        <div class="container">
-            <h2 data-he="רוצים לתרום? דברו ישירות עם המ״פ" data-en="Want to Donate? Talk Directly with the Commander">רוצים לתרום? דברו ישירות עם המ״פ</h2>
-            <p class="donate-subtitle" data-he="ללא ביניים – כל שאלה, כל סכום, נסגור ביחד 🇮🇱" data-en="No middlemen – any question, any amount, we'll sort it out together 🇮🇱">ללא ביניים – כל שאלה, כל סכום, נסגור ביחד 🇮🇱</p>
+                    <section class="group reveal">
+                        <h3 class="group-title" data-he="הגנה משופרת" data-en="Enhanced protection">הגנה משופרת</h3>
+                        <ul>
+                            <li class="row" data-price="200"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="משקפי מגן" data-en="Protective Goggles">משקפי מגן</span></label><span class="qty"></span><span class="price">₪200</span></li>
+                            <li class="row" data-price="120"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="ברכיות טקטיות" data-en="Tactical Knee Pads">ברכיות טקטיות</span></label><span class="qty"></span><span class="price">₪120</span></li>
+                            <li class="row" data-price="450"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="נעליים טקטיות" data-en="Tactical Boots">נעליים טקטיות</span></label><span class="qty"></span><span class="price">₪450</span></li>
+                            <li class="row" data-price="4900"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="וסט לוחם" data-en="Combat Vest">וסט לוחם</span></label><span class="qty"></span><span class="price">₪4,900</span></li>
+                            <li class="row" data-price="650"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="מדים טקטיים" data-en="Tactical Uniform">מדים טקטיים</span></label><span class="qty"></span><span class="price">₪650</span></li>
+                        </ul>
+                    </section>
 
-            <div class="contact-commander-card">
-                <div class="commander-icon">
-                    <svg width="56" height="56" viewBox="0 0 448 512" fill="#25D366">
-                        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                    </svg>
-                </div>
-                <h3 data-he="שלחו הודעה ישירות למ״פ" data-en="Message the Commander Directly">שלחו הודעה ישירות למ״פ</h3>
-                <p class="commander-name" data-he="רס״ן (מיל׳) איתי חיניץ" data-en="Maj. (Res.) Itay Hinitz">רס״ן (מיל׳) איתי חיניץ</p>
-                <p class="commander-desc" data-he="לחצו על הכפתור – הודעה מוכנה תיפתח אצלכם בוואטסאפ. המ״פ יחזור אליכם בהקדם עם כל הפרטים." data-en="Tap the button – a ready-made message will open in your WhatsApp. The commander will get back to you with all the details.">לחצו על הכפתור – הודעה מוכנה תיפתח אצלכם בוואטסאפ. המ״פ יחזור אליכם בהקדם עם כל הפרטים.</p>
-                <a id="donate-whatsapp-btn" href="#" class="donate-whatsapp-btn" target="_blank" rel="noopener">
-                    <svg width="24" height="24" viewBox="0 0 448 512" fill="currentColor">
-                        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                    </svg>
-                    <span data-he="אני רוצה לתרום" data-en="I Want to Donate">אני רוצה לתרום</span>
-                </a>
-                <p class="commander-phone"><span data-he="אין וואטסאפ? התקשרו:" data-en="No WhatsApp? Call:">אין וואטסאפ? התקשרו:</span> <a href="tel:+972543320613" dir="ltr">054-332-0613</a></p>
+                    <section class="group reveal">
+                        <h3 class="group-title" data-he="ציוד אישי" data-en="Personal equipment">ציוד אישי</h3>
+                        <ul>
+                            <li class="row" data-price="380"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="מעיל חורף" data-en="Winter Jacket">מעיל חורף</span></label><span class="qty"></span><span class="price">₪380</span></li>
+                            <li class="row" data-price="120"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="רצועת נשק" data-en="Weapon Sling">רצועת נשק</span></label><span class="qty"></span><span class="price">₪120</span></li>
+                            <li class="row" data-price="75"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="חגורה" data-en="Tactical Belt">חגורה</span></label><span class="qty"></span><span class="price">₪75</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="group reveal">
+                        <h3 class="group-title" data-he="רפואה והישרדות" data-en="Medical & survival">רפואה והישרדות</h3>
+                        <ul>
+                            <li class="row" data-price="320"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="ערכת עזרה ראשונה" data-en="Medical Emergency Kit">ערכת עזרה ראשונה</span></label><span class="qty"></span><span class="price">₪320</span></li>
+                            <li class="row" data-price="180"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="ערכת מזון ללוחם" data-en="Combat Field Ration">ערכת מזון ללוחם</span></label><span class="qty"></span><span class="price">₪180</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="group reveal">
+                        <h3 class="group-title" data-he="אחר" data-en="Other">אחר</h3>
+                        <ul>
+                            <li class="row" data-price="0" data-free="1"><label><input class="pick" type="checkbox"><span class="box" aria-hidden="true"></span><span class="name" data-he="סכום חופשי, נסגור ביחד" data-en="Any amount, we'll sort it out">סכום חופשי, נסגור ביחד</span></label><span class="qty"></span><span class="price" data-he="כל סכום" data-en="Any">כל סכום</span></li>
+                        </ul>
+                    </section>
+
+                    <p class="gear-note" data-he="* המחירים משוערים ומשתנים לפי ספק ודגם" data-en="* Prices are estimated and vary by supplier and model">* המחירים משוערים ומשתנים לפי ספק ודגם</p>
+                </form>
+
+                <aside class="basket" id="basket" aria-live="polite">
+                    <p class="basket-label" data-he="הסל שלכם" data-en="Your basket">הסל שלכם</p>
+                    <p class="basket-total" id="basket-total">₪0</p>
+                    <p class="basket-count"><span id="basket-count">0</span> <span data-he="פריטים" data-en="items">פריטים</span></p>
+                    <a id="basket-send" class="btn btn-gold" href="https://wa.me/972543320613" target="_blank" rel="noopener"><span data-he="שלחו למ״פ בוואטסאפ" data-en="Send to the commander">שלחו למ״פ בוואטסאפ</span></a>
+                    <p class="basket-note" data-he="ההודעה נפתחת בוואטסאפ, מוכנה לשליחה. המ״פ חוזר אליכם עם הפרטים." data-en="The message opens in WhatsApp, ready to send. The commander replies with the details.">ההודעה נפתחת בוואטסאפ, מוכנה לשליחה. המ״פ חוזר אליכם עם הפרטים.</p>
+                </aside>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Message Section -->
-    <section class="message-section">
-        <div class="container">
-            <blockquote data-he="&quot;אתם שם בשבילנו — אנחנו פה בשבילכם&quot;" data-en="&quot;You're there for us — We're here for you&quot;">"אתם שם בשבילנו — אנחנו פה בשבילכם"</blockquote>
-        </div>
-    </section>
-
-    <!-- Share Section -->
-    <section class="share-section">
-        <div class="container">
-            <p class="share-text" data-he="עזרו לנו להפיץ את הבשורה" data-en="Help us spread the word">עזרו לנו להפיץ את הבשורה</p>
-            <div class="share-buttons">
-                <a href="#" id="share-whatsapp" class="share-btn share-btn-wa" target="_blank" rel="noopener">
-                    <svg width="20" height="20" viewBox="0 0 448 512" fill="currentColor">
-                        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                    </svg>
-                    <span data-he="שתפו בוואטסאפ" data-en="Share on WhatsApp">שתפו בוואטסאפ</span>
-                </a>
-                <a href="#" id="share-telegram" class="share-btn share-btn-tg" target="_blank" rel="noopener">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z"/>
-                    </svg>
-                    <span data-he="שתפו בטלגרם" data-en="Share on Telegram">שתפו בטלגרם</span>
-                </a>
-                <button id="share-instagram" class="share-btn share-btn-ig" onclick="shareInstagram()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                    </svg>
-                    <span data-he="שתפו באינסטגרם" data-en="Share on Instagram">שתפו באינסטגרם</span>
-                </button>
+        <!-- Donate -->
+        <section id="donate" class="donate">
+            <h2 class="donate-title">
+                <span class="l" data-he="מוכנים" data-en="Ready">מוכנים</span>
+                <span class="l" data-he="לתרום?" data-en="to give?">לתרום?</span>
+            </h2>
+            <div class="donate-choice">
+                <a id="donate-whatsapp-btn" class="btn btn-gold" href="https://wa.me/972543320613" target="_blank" rel="noopener"><span data-he="שלחו הודעה" data-en="Send a message">שלחו הודעה</span></a>
+                <span class="or" data-he="או" data-en="or">או</span>
+                <a class="btn btn-paper" href="tel:+972543320613"><span data-he="התקשרו" data-en="Call">התקשרו</span></a>
             </div>
-            <div id="share-toast" class="share-toast" aria-live="polite"></div>
-        </div>
-    </section>
-
+            <p class="donate-line"><span class="commander-name" data-he="רס״ן (מיל׳) איתי חיניץ" data-en="Maj. (Res.) Itay Hinitz">רס״ן (מיל׳) איתי חיניץ</span> <span data-he="המ״פ, חוזר אליכם עם כל הפרטים." data-en="the commander, gets back to you with all the details.">המ״פ, חוזר אליכם עם כל הפרטים.</span> <a class="phone" href="tel:+972543320613" dir="ltr">054-332-0613</a></p>
+            <p class="donate-quote" data-he="״אתם שם בשבילנו — אנחנו פה בשבילכם״" data-en="“You're there for us. We're here for you.”">״אתם שם בשבילנו — אנחנו פה בשבילכם״</p>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>🇮🇱 <span data-he="עם ישראל חי" data-en="Am Yisrael Chai">עם ישראל חי</span> 🇮🇱</p>
-            <p class="footer-credit"><span data-he="פלוגה ב׳ • מגיני העמק" data-en="Company B • Valley Defenders">פלוגה ב׳ • מגיני העמק</span> • <span id="current-year"></span></p>
+    <footer class="foot">
+        <figure class="foot-photo">
+            <img src="img/squad-close.jpg" width="560" height="560" alt="לוחמי פלוגה ב׳" loading="lazy">
+        </figure>
+        <div class="foot-menu">
+            <p class="foot-brand" data-he="פלוגה ב׳ • מגיני העמק" data-en="Company B • Valley Defenders">פלוגה ב׳ • מגיני העמק</p>
+            <nav aria-label="Menu">
+                <a href="#about" data-he="מי אנחנו" data-en="Who we are">מי אנחנו</a>
+                <a href="#gear" data-he="ציוד לתרומה" data-en="Gear to donate">ציוד לתרומה</a>
+                <a href="#donate" data-he="יצירת קשר" data-en="Contact">יצירת קשר</a>
+            </nav>
+            <div class="foot-share">
+                <p data-he="עזרו לנו להפיץ" data-en="Help us spread the word">עזרו לנו להפיץ</p>
+                <a href="#" id="share-whatsapp" target="_blank" rel="noopener" data-he="וואטסאפ" data-en="WhatsApp">וואטסאפ</a>
+                <a href="#" id="share-telegram" target="_blank" rel="noopener" data-he="טלגרם" data-en="Telegram">טלגרם</a>
+                <button type="button" id="share-instagram" onclick="shareInstagram()" data-he="אינסטגרם" data-en="Instagram">אינסטגרם</button>
+                <div id="share-toast" class="share-toast" aria-live="polite"></div>
+            </div>
+            <p class="foot-legal"><span data-he="עם ישראל חי" data-en="Am Yisrael Chai">עם ישראל חי</span> • <span id="current-year"></span></p>
         </div>
     </footer>
 
@@ -263,182 +195,190 @@
         // Current language state
         let currentLang = 'he';
 
-        // Language translations object
         const translations = {
-            igCopied: { he: '📋 הטקסט הועתק! פותח אינסטגרם...', en: '📋 Copied! Opening Instagram...' }
+            igCopied: { he: 'הטקסט הועתק! פותח אינסטגרם...', en: 'Copied! Opening Instagram...' }
         };
 
-        // Pre-written donate message to commander
+        // Pre-written messages to the commander
         const donateMessages = {
             he: 'שלום איתי, אני מעוניין לתרום לפלוגה ב׳. כיצד אוכל לעזור?',
             en: "Hi Itay, I'd like to donate to Company B. How can I help?"
         };
 
-        // Per-item donate message to commander
-        const itemMessages = {
-            he: (name, price) => `שלום איתי, אני מעוניין לתרום ${name} (${price}) לפלוגה ב׳.`,
-            en: (name, price) => `Hi Itay, I'd like to donate ${name} (${price}) to Company B.`
+        const basketMessages = {
+            he: { intro: 'שלום איתי, אני רוצה לתרום לפלוגה ב׳:', total: 'סה״כ' },
+            en: { intro: "Hi Itay, I'd like to donate to Company B:", total: 'Total' }
         };
 
-        // Toggle language
+        const commanderWa = 'https://wa.me/972543320613';
+        const siteUrl = 'https://rayalon1984.github.io/pluga-bet-1851/';
+
         function toggleLanguage() {
-            currentLang = currentLang === 'he' ? 'en' : 'he';
-            applyLanguage(currentLang);
-            localStorage.setItem('preferredLang', currentLang);
+            applyLanguage(currentLang === 'he' ? 'en' : 'he');
+            try { localStorage.setItem('preferredLang', currentLang); } catch (e) {}
         }
 
-        // Apply language to all elements
         function applyLanguage(lang) {
             const html = document.documentElement;
-
-            // Set direction and lang attribute
             html.setAttribute('lang', lang);
             html.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
 
-            // Update toggle button
+            // Toggle shows the TARGET language
             const langToggle = document.querySelector('.lang-toggle');
-            const langFlag = langToggle.querySelector('.lang-flag');
-            const langText = langToggle.querySelector('.lang-text');
+            langToggle.querySelector('.lang-text').textContent = lang === 'he' ? 'EN' : 'IL';
+            langToggle.querySelector('.lang-flag').textContent = lang === 'he' ? '🇺🇸' : '🇮🇱';
 
-            if (lang === 'he') {
-                // Currently Hebrew, show option to switch to English
-                langText.textContent = 'EN';
-                langFlag.textContent = '🇺🇸';
-            } else {
-                // Currently English, show option to switch to Hebrew
-                langText.textContent = 'IL';
-                langFlag.textContent = '🇮🇱';
-            }
-
-            // Update all translatable elements
             document.querySelectorAll('[data-he][data-en]').forEach(el => {
                 el.textContent = el.getAttribute(`data-${lang}`);
             });
 
-            // Update donate button WhatsApp URL for current language
-            const donateWaBtn = document.getElementById('donate-whatsapp-btn');
-            if (donateWaBtn) {
-                donateWaBtn.href = 'https://wa.me/972543320613?text=' + encodeURIComponent(donateMessages[lang]);
-            }
-
-            // Each equipment row opens WhatsApp with that item pre-filled
-            document.querySelectorAll('.equipment-item').forEach(item => {
-                const name = item.querySelector('.item-name').textContent;
-                const price = item.querySelector('.item-price').textContent;
-                item.href = 'https://wa.me/972543320613?text=' + encodeURIComponent(itemMessages[lang](name, price));
-                item.target = '_blank';
-                item.rel = 'noopener';
-            });
-
             currentLang = lang;
+            renderSteppers();
+            updateBasket();
+            updateShare();
         }
 
-        // Detect country by IP
         async function detectCountry() {
             try {
                 const response = await fetch('https://ipapi.co/json/');
                 const data = await response.json();
                 return data.country_code;
             } catch (error) {
-                console.log('Could not detect location');
                 return null;
             }
         }
 
-        // Initialize language on page load
         async function initLanguage() {
-            // Check for saved preference first
-            const savedLang = localStorage.getItem('preferredLang');
+            let savedLang = null;
+            try { savedLang = localStorage.getItem('preferredLang'); } catch (e) {}
             if (savedLang) {
                 applyLanguage(savedLang);
                 return;
             }
-
-            // Detect country by IP
             const country = await detectCountry();
-
-            // If not Israel, default to English
-            if (country && country !== 'IL') {
-                applyLanguage('en');
-            } else {
-                applyLanguage('he');
-            }
+            applyLanguage(country && country !== 'IL' ? 'en' : 'he');
         }
 
-        // Smooth scroll for CTA
-        document.querySelector('.cta-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#donate').scrollIntoView({ behavior: 'smooth' });
+        // ============================================
+        // Equipment requisition: the donation basket
+        // ============================================
+        const rows = Array.from(document.querySelectorAll('.row'));
+        const money = n => '₪' + n.toLocaleString('en-US');
+
+        function rowQty(row) { return parseInt(row.dataset.qty || '1', 10); }
+
+        function setQty(row, qty) {
+            const pick = row.querySelector('.pick');
+            if (qty < 1) {
+                pick.checked = false;
+                row.dataset.qty = '1';
+            } else {
+                row.dataset.qty = String(Math.min(qty, 99));
+            }
+            updateBasket();
+        }
+
+        // Built once per language so keyboard focus survives quantity changes
+        function renderSteppers() {
+            rows.forEach(renderStepper);
+        }
+
+        function renderStepper(row) {
+            const slot = row.querySelector('.qty');
+            if (row.dataset.free) { slot.innerHTML = ''; return; }
+            const name = row.querySelector('.name').textContent;
+            const less = currentLang === 'he' ? 'פחות' : 'Fewer';
+            const more = currentLang === 'he' ? 'עוד' : 'More';
+            slot.innerHTML =
+                `<button type="button" class="step" data-step="-1" aria-label="${less}: ${name}">−</button>` +
+                `<output class="qty-n">${rowQty(row)}</output>` +
+                `<button type="button" class="step" data-step="1" aria-label="${more}: ${name}">+</button>`;
+        }
+
+        function updateBasket() {
+            let count = 0;
+            let total = 0;
+            const lines = [];
+            rows.forEach(row => {
+                const checked = row.querySelector('.pick').checked;
+                row.classList.toggle('on', checked);
+                const out = row.querySelector('.qty-n');
+                if (out) out.textContent = rowQty(row);
+                if (!checked) return;
+                const qty = row.dataset.free ? 1 : rowQty(row);
+                const price = parseInt(row.dataset.price, 10);
+                const name = row.querySelector('.name').textContent;
+                count += qty;
+                total += qty * price;
+                lines.push(row.dataset.free ? `• ${name}` : `• ${name} ×${qty} (${money(qty * price)})`);
+            });
+
+            document.getElementById('basket-count').textContent = count;
+            document.getElementById('basket-total').textContent = money(total);
+            document.getElementById('basket').classList.toggle('has-items', count > 0);
+            document.body.classList.toggle('basket-open', count > 0);
+
+            const msg = count === 0
+                ? donateMessages[currentLang]
+                : [basketMessages[currentLang].intro, ...lines, '', `${basketMessages[currentLang].total}: ${money(total)}`].join('\n');
+            const href = commanderWa + '?text=' + encodeURIComponent(msg);
+            document.getElementById('basket-send').href = href;
+            document.getElementById('donate-whatsapp-btn').href = href;
+        }
+
+        document.querySelector('.form').addEventListener('change', e => {
+            if (e.target.classList.contains('pick')) updateBasket();
         });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        document.querySelector('.form').addEventListener('click', e => {
+            const step = e.target.closest('.step');
+            if (!step) return;
+            const row = step.closest('.row');
+            setQty(row, rowQty(row) + parseInt(step.dataset.step, 10));
+        });
 
+        // ============================================
+        // Scroll reveal
+        // ============================================
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
+                    entry.target.classList.add('in');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-        document.querySelectorAll('.equipment-category, .contact-commander-card, .who-section').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Initialize language on load
-        initLanguage();
+        // ============================================
+        // Share
+        // ============================================
+        function shareMessage() {
+            return currentLang === 'he'
+                ? `🇮🇱 בואו לתמוך בלוחמי פלוגה ב׳ - מגיני העמק!\n\nרוצים לתרום? שלחו הודעה ישירות למ״פ 👇\n${commanderWa}?text=${encodeURIComponent(donateMessages.he)}\n\nכל תרומה עושה את ההבדל 💪\n${siteUrl}` // taste-skill-ignore: emoji is message text, not UI
+                : `🇮🇱 Support Company B - Valley Defenders!\n\nWant to donate? Message the company commander directly 👇\n${commanderWa}?text=${encodeURIComponent(donateMessages.en)}\n\nEvery contribution makes a difference 💪\n${siteUrl}`; // taste-skill-ignore: emoji is message text, not UI
+        }
 
-        // Set current year dynamically
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        function updateShare() {
+            document.getElementById('share-whatsapp').href = 'https://wa.me/?text=' + encodeURIComponent(shareMessage());
+            document.getElementById('share-telegram').href = 'https://t.me/share/url?url=' + encodeURIComponent(siteUrl) + '&text=' + encodeURIComponent(shareMessage());
+        }
 
-        // Share setup
-        const siteUrl = 'https://rayalon1984.github.io/pluga-bet-1851/';
-        const commanderWa = 'https://wa.me/972543320613';
-
-        const shareMessages = {
-            he: `🇮🇱 בואו לתמוך בלוחמי פלוגה ב׳ - מגיני העמק!
-
-רוצים לתרום? שלחו הודעה ישירות למ״פ 👇
-${commanderWa}?text=${encodeURIComponent(donateMessages.he)}
-
-כל תרומה עושה את ההבדל 💪
-${siteUrl}`,
-            en: `🇮🇱 Support Company B - Valley Defenders!
-
-Want to donate? Message the company commander directly 👇
-${commanderWa}?text=${encodeURIComponent(donateMessages.en)}
-
-Every contribution makes a difference 💪
-${siteUrl}`
-        };
-
-        // WhatsApp share
-        document.getElementById('share-whatsapp').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://wa.me/?text=' + encodeURIComponent(shareMessages[currentLang]), '_blank');
-        });
-
-        // Telegram share
-        document.getElementById('share-telegram').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://t.me/share/url?url=' + encodeURIComponent(siteUrl) + '&text=' + encodeURIComponent(shareMessages[currentLang]), '_blank');
-        });
-
-        // Instagram: copy share message to clipboard then launch Instagram
         function shareInstagram() {
-            navigator.clipboard.writeText(shareMessages[currentLang]).then(() => {
-                const toast = document.getElementById('share-toast');
+            const toast = document.getElementById('share-toast');
+            const open = () => setTimeout(() => window.open('https://www.instagram.com', '_blank'), 500);
+            navigator.clipboard.writeText(shareMessage()).then(() => {
                 toast.textContent = translations.igCopied[currentLang];
                 toast.classList.add('show');
                 setTimeout(() => toast.classList.remove('show'), 3000);
-                setTimeout(() => window.open('https://www.instagram.com', '_blank'), 500);
-            });
+                open();
+            }).catch(open);
         }
 
+        // Init
+        initLanguage();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
