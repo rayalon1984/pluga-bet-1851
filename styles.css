@@ -25,7 +25,8 @@
     --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
     --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
 
-    --transition: all 0.3s ease;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --transition: transform 0.2s var(--ease-out), background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
     --radius: 16px;
 }
 
@@ -38,6 +39,18 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+}
+
+a, button {
+    touch-action: manipulation;
+}
+
+.lang-toggle, .cta-button, .donate-whatsapp-btn, .share-btn {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
 }
 
 body {
@@ -59,8 +72,8 @@ body {
    ============================================ */
 .lang-toggle {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: calc(20px + env(safe-area-inset-top, 0px));
+    left: calc(20px + env(safe-area-inset-left, 0px));
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -75,12 +88,6 @@ body {
     transition: var(--transition);
     box-shadow: var(--shadow-md);
     font-family: inherit;
-}
-
-.lang-toggle:hover {
-    background: var(--white);
-    transform: scale(1.05);
-    box-shadow: var(--shadow-lg);
 }
 
 .lang-flag {
@@ -130,18 +137,14 @@ body {
     left: 20px;
 }
 
-[dir="ltr"] .equipment-item:hover {
-    transform: translateX(4px);
-}
-
 
 /* ============================================
    WhatsApp Float Button
    ============================================ */
 .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: calc(20px + env(safe-area-inset-right, 0px));
     z-index: 999;
     width: 56px;
     height: 56px;
@@ -161,15 +164,10 @@ body {
     transition: var(--transition);
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
 @media (max-width: 480px) {
     .whatsapp-float {
-        bottom: 16px;
-        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        right: calc(16px + env(safe-area-inset-right, 0px));
         width: 50px;
         height: 50px;
     }
@@ -186,6 +184,7 @@ body {
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -226,6 +225,7 @@ body {
     position: relative;
     z-index: 1;
     max-width: 600px;
+    width: 100%;
 }
 
 .hero-logo {
@@ -260,6 +260,7 @@ body {
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(10px);
     color: var(--sand-light);
+    max-width: 100%;
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -276,6 +277,7 @@ body {
     margin-bottom: 16px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.3);
     line-height: 1.1;
+    overflow-wrap: anywhere;
 }
 
 .hero-subtitle {
@@ -300,22 +302,6 @@ body {
     text-decoration: none;
     transition: var(--transition);
     box-shadow: var(--shadow-md);
-}
-
-.cta-button:hover {
-    background: var(--gold-light);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-}
-
-.cta-button svg {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(5px); }
-    60% { transform: translateY(3px); }
 }
 
 /* ============================================
@@ -356,11 +342,6 @@ body {
     transition: var(--transition);
 }
 
-.equipment-category:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
-}
-
 .category-header {
     display: flex;
     align-items: center;
@@ -393,11 +374,6 @@ body {
     background: var(--white);
     border-radius: 10px;
     transition: var(--transition);
-}
-
-.equipment-item:hover {
-    background: var(--sand-light);
-    transform: translateX(-4px);
 }
 
 .item-name {
@@ -456,15 +432,6 @@ body {
     transition: var(--transition);
 }
 
-.js .contact-commander-card {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.js .contact-commander-card.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .commander-icon {
     width: 96px;
@@ -506,12 +473,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
 }
 
-.donate-whatsapp-btn:hover {
-    background: #0b6232;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
-}
-
 .commander-phone {
     margin-top: 20px;
     color: var(--text-light);
@@ -519,6 +480,8 @@ body {
 }
 
 .commander-phone a {
+    display: inline-block;
+    padding: 12px 4px;
     white-space: nowrap;
     color: var(--olive-dark);
     font-weight: 700;
@@ -638,31 +601,14 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.share-btn-wa:hover {
-    background: #0b6232;
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
 .share-btn-tg {
     background: var(--telegram-dark);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.share-btn-tg:hover {
-    background: #135a85;
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
 .share-btn-ig {
     background: linear-gradient(45deg, #b4470e, #c0283f, #a31d7a);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.share-btn-ig:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .share-btn svg {
@@ -693,7 +639,7 @@ body {
    Footer
    ============================================ */
 .footer {
-    padding: 40px 20px;
+    padding: 40px 20px calc(40px + env(safe-area-inset-bottom, 0px));
     background: var(--olive);
     text-align: center;
     color: var(--sand-light);
@@ -716,6 +662,7 @@ body {
 @media (max-width: 768px) {
     .hero {
         min-height: 90vh;
+        min-height: 90svh;
         padding: 60px 20px;
     }
 
@@ -753,6 +700,7 @@ body {
 @media (max-width: 480px) {
     .hero {
         min-height: 85vh;
+        min-height: 85svh;
     }
 
     .badge {
@@ -838,31 +786,105 @@ body {
 }
 
 /* Animation timing for cards */
-.js .equipment-category {
-    opacity: 0;
-    transform: translateY(30px);
+/* Scroll reveal: one-time rise, only when JS can reveal it */
+@keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
 }
 
-.js .equipment-category.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.equipment-category:nth-child(1) { transition-delay: 0s; }
-.equipment-category:nth-child(2) { transition-delay: 0.1s; }
-.equipment-category:nth-child(3) { transition-delay: 0.2s; }
-.equipment-category:nth-child(4) { transition-delay: 0.3s; }
-
-/* Who section animation */
+.js .equipment-category,
+.js .contact-commander-card,
 .js .who-section {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.js .equipment-category.animate-in,
+.js .contact-commander-card.animate-in,
 .js .who-section.animate-in {
     opacity: 1;
-    transform: translateY(0);
+    animation: rise 0.5s var(--ease-out) backwards;
+}
+
+.equipment-category:nth-child(2).animate-in { animation-delay: 60ms; }
+.equipment-category:nth-child(3).animate-in { animation-delay: 120ms; }
+.equipment-category:nth-child(4).animate-in { animation-delay: 180ms; }
+
+/* Hero entrance: the one authored moment, plays once on load */
+.hero-content > * {
+    animation: rise 0.7s var(--ease-out) backwards;
+}
+
+.hero-content > :nth-child(2) { animation-delay: 80ms; }
+.hero-content > :nth-child(3) { animation-delay: 160ms; }
+.hero-content > :nth-child(4) { animation-delay: 240ms; }
+
+/* Press feedback on every tappable control */
+.lang-toggle:active,
+.whatsapp-float:active,
+.cta-button:active,
+.donate-whatsapp-btn:active,
+.share-btn:active {
+    transform: scale(0.97);
+}
+
+.equipment-item:active {
+    transform: scale(0.98);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .lang-toggle:hover {
+        background: var(--white);
+        transform: scale(1.05);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button:hover {
+        background: var(--gold-light);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .equipment-category:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-4px);
+    }
+
+    .equipment-item:hover {
+        background: var(--sand-light);
+        transform: translateX(-4px);
+    }
+
+    [dir="ltr"] .equipment-item:hover {
+        transform: translateX(4px);
+    }
+
+    .donate-whatsapp-btn:hover {
+        background: #0b6232;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+    }
+
+    .share-btn-wa:hover {
+        background: #0b6232;
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .share-btn-tg:hover {
+        background: #135a85;
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .share-btn-ig:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
 }
 
 /* Accessibility */
